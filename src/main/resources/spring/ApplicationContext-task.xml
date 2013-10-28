@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"
+       default-lazy-init="false">
+
+
+    <!--<bean id="assignIncrementDataTask" class="com.tuan8000.ruleslient.task.AssignIncrementDataTask"/>-->
+
+    <!--<task:scheduled-tasks>-->
+        <!--&lt;!&ndash;5m&ndash;&gt;-->
+        <!--&lt;!&ndash;<task:scheduled ref="assignIncrementDataTask" method="processHui" fixed-delay="300000"/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<task:scheduled ref="assignIncrementDataTask" method="processSrc" fixed-delay="300000" />&ndash;&gt;-->
+
+        <!--<task:scheduled ref="assignIncrementDataTask" method="processHui" cron="0 0/5 * * * ?"/>-->
+
+        <!--<task:scheduled ref="assignIncrementDataTask" method="processSrc" cron="0 0/10 * * * ?"/>-->
+
+    <!--</task:scheduled-tasks>-->
+
+</beans>
