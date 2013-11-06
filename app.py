@@ -25,6 +25,8 @@ import tornado.options
 import tornado.web
 import unicodedata
 
+import pysolr
+
 from tornado.options import define, options
 
 define("port", default=8888, help="run on the given port", type=int)
@@ -38,8 +40,9 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/insurance", InsuranceHandler),
-            (r"/", HomeHandler),
-            # (r"/archive", ArchiveHandler),
+            (r"/admin", HomeHandler),
+            (r"/", IndexHandler),
+            (r"/search", IndexHandler),
             # (r"/feed", FeedHandler),
             # (r"/entry/([^/]+)", EntryHandler),
             # (r"/compose", ComposeHandler),
@@ -67,6 +70,7 @@ class Application(tornado.web.Application):
 class BaseHandler(tornado.web.RequestHandler):
     @property
     def db(self):
+    	print "rund"
         return self.application.db
 
     def get_current_user(self):
@@ -111,7 +115,6 @@ class InsuranceHandler(BaseHandler):
         pro_name = self.get_argument("pro_name", None)
         age_min = self.get_argument("age_min", None)
         age_max = self.get_argument("age_max")
-        print  pro_name, age_min, age_max
         insu_days = self.get_argument("insu_days")
         description = self.get_argument("description")
         tags = self.get_argument("tags")
@@ -137,6 +140,43 @@ class InsuranceHandler(BaseHandler):
         else:
             tornado.web.HTTPError(500, "Bad Parameter of form")
         self.redirect("/insurance?action=list")
+
+class IndexHandler(BaseHandler):
+    def get(self):
+        self.render("index.html")
+
+    def post(self):
+        solr = pysolr.Solr("http://110.75.189.239:9999/solr/collection1")
+        # q = "http://110.75.189.239:9999/solr/collection1/select?q=pro_name:"
+        # "%s+AND+insu_days:%s+AND+tags:%s+AND+description:%s+AND+%s&wt=json&indent=true"
+        # pro_name = self.get_argument("pro_name", "")
+        # age_min = self.get_argument("age_min", 0)
+        # age_max = self.get_argument("age_max", age_min)
+        # insu_days = self.get_argument("insu_days", "")
+        # description = self.get_argument("description", "")
+        # tags = self.get_argument("tags")
+        # clause = self.get_argument("clause", "")
+        # limit = self.get_argument("limit", 0)
+        # clause_limit = self.get_argument("clause_limit", "")
+        # cl_query=""
+        # for arg in 
+
+        #should decode
+        args = self.request.arguments
+        param = []
+        for arg in args:
+            if arg == "age_max" or arg == "age_min":
+                continue
+            ls = args[arg]
+            if ls and len(ls) > 0:
+                if arg == "clause_limit" and ls[0]:
+                    for e in set(ls[0].split(",")):
+                        param.append("clause:%s" % e.replace(":", " AND limits:"))
+                elif ls[0]:
+                    param.append("%s:%s" % (arg, ls[0]))
+        # self.write(" AND ".join(param))
+        result = solr.search(" AND ".join(param))
+        self.write({"results":[r for r in result]})
 
 class EntryHandler(BaseHandler):
     def get(self, slug):

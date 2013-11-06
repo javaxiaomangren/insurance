@@ -13,8 +13,8 @@ setEvents("#clause_list", "a", function(){
 
 setEvents("#limit_list", "a", function(){
 	$("#limit").val(this.text)
+	$("#limits").val(this.text)
 })
-
 
 setEvents("#tags_list", "a", function(){
 	var oldval = $("#tags").val()
@@ -87,5 +87,6 @@ function generate(){
 		}
 		$("#clause_limit").val(value)
 		limit = $("#limit").val("")
+		$("#clause_limit").css("display", "inline")
 	}
 }
