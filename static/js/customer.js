@@ -79,14 +79,26 @@ function setEvents(id, find, func){
 function generate(){
 	var oldval = $("#clause_limit").val()
 	var clause = $("#clause").val()
-	var limit = $("#limit").val()
+	var limit = $("#limits").val()
 	if (clause != "" && limit != ""){
 		var value = clause + ":" + limit
 		if(oldval != ""){
 			value = oldval + ", " + value
 		}
 		$("#clause_limit").val(value)
-		limit = $("#limit").val("")
+		limit = $("#limits").val("")
 		$("#clause_limit").css("display", "inline")
 	}
 }
+
+
+// $("#search-form submit").submit(function(){
+// 	$ajax({
+// 		url:"/search",
+// 		type:"POST",
+// 		data:$("#search-form").serialize(),
+// 		success:function(data){
+// 			$("#query_result").html(data)
+// 		}
+// 	})
+// })

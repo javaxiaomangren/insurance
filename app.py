@@ -33,7 +33,7 @@ define("port", default=8888, help="run on the given port", type=int)
 define("mysql_host", default="127.0.0.1:3306", help="insurance database host")
 define("mysql_database", default="insurance", help="insurance database name")
 define("mysql_user", default="root", help="insurance database user")
-define("mysql_password", default="", help="insurance database password")
+define("mysql_password", default="admin", help="insurance database password")
 
 
 class Application(tornado.web.Application):
@@ -111,7 +111,7 @@ class InsuranceHandler(BaseHandler):
 
 
     def post(self):
-        insu_id = self.get_argument("pro_id", None)
+        # insu_id = self.get_argument("pro_id", None)
         pro_name = self.get_argument("pro_name", None)
         age_min = self.get_argument("age_min", None)
         age_max = self.get_argument("age_max")
@@ -147,20 +147,6 @@ class IndexHandler(BaseHandler):
 
     def post(self):
         solr = pysolr.Solr("http://110.75.189.239:9999/solr/collection1")
-        # q = "http://110.75.189.239:9999/solr/collection1/select?q=pro_name:"
-        # "%s+AND+insu_days:%s+AND+tags:%s+AND+description:%s+AND+%s&wt=json&indent=true"
-        # pro_name = self.get_argument("pro_name", "")
-        # age_min = self.get_argument("age_min", 0)
-        # age_max = self.get_argument("age_max", age_min)
-        # insu_days = self.get_argument("insu_days", "")
-        # description = self.get_argument("description", "")
-        # tags = self.get_argument("tags")
-        # clause = self.get_argument("clause", "")
-        # limit = self.get_argument("limit", 0)
-        # clause_limit = self.get_argument("clause_limit", "")
-        # cl_query=""
-        # for arg in 
-
         #should decode
         args = self.request.arguments
         param = []
@@ -174,9 +160,13 @@ class IndexHandler(BaseHandler):
                         param.append("clause:%s" % e.replace(":", " AND limits:"))
                 elif ls[0]:
                     param.append("%s:%s" % (arg, ls[0]))
-        # self.write(" AND ".join(param))
-        result = solr.search(" AND ".join(param))
-        self.write({"results":[r for r in result]})
+        if param:
+            query_string = " AND ".join(param)
+        else:
+            query_string = "*:*"
+        results = solr.search(query_string)
+        self.render("table.html", entries=sorted([x for x in results], key=lambda y:y.get('id')))
+        # self.write({"results":[r for r in result]})
 
 class EntryHandler(BaseHandler):
     def get(self, slug):
