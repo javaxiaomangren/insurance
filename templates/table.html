@@ -160,14 +160,14 @@
   <tbody>
     {% for r in entries %}
       <tr>
-        <td class="warning">{{ r['id'] }}</td>
-        <td>{{ r['pro_name'] }}</td>
-        <td>{{ r['minAge'] }}</td>
-        <td>{{ r['insu_days'] }}</td>
+        <td class="warning">{{ r.id }}</td>
+        <td>{{ r.pro_name }}</td>
+        <td>{{ r.minAge }}</td>
+        <td>{{ r.insu_days }}</td>
         <td>
           <select>
             {%
-              for x in r['clause']
+              for x in r.clause
             %}
               <option>{{ x }}</option>
             {% end %}
@@ -176,21 +176,21 @@
         <td>
          <select>
             {%
-              for x in r['limits']
+              for x in r.limits
             %}
               <option>{{ x }}</option>
             {% end %}
           </select>
         </td>
-        <td>{{ r['price'] }}</td>
+        <td>{{ r.price }}</td>
       </tr>
       <tr>
         <th >标签</th>
-        <td colspan="5">{{ r['tags'] }} </td>
+        <td colspan="5">{{ r.tags }} </td>
       </tr>
       <tr>
         <th>描述</th>
-        <td colspan="5">{{ r['description'] }} </td>
+        <td colspan="5">{{ r.description }} </td>
       </tr>
     {% end %}
   </tbody>

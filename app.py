@@ -35,6 +35,12 @@ define("mysql_database", default="insurance", help="insurance database name")
 define("mysql_user", default="root", help="insurance database user")
 define("mysql_password", default="admin", help="insurance database password")
 
+def ObjectDict(dict):
+    def __getattr__(self, name):
+        try:
+            return self[name]
+        except KeyError:
+            raise AttributeError(name)
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -165,7 +171,12 @@ class IndexHandler(BaseHandler):
         else:
             query_string = "*:*"
         results = solr.search(query_string)
-        self.render("table.html", entries=sorted([x for x in results], key=lambda y:y.get('id')))
+        results = sorted(results, key=lambda y:y.get('id'))
+        print dir(ObjectDict)
+        # print ObjectDict(zip(results[0].keys, results[0]))
+        entries = [ObjectDict(row) for row in sorted(results, key=lambda y:y.get('id'))]
+        print entries
+        # self.render("table.html", entries=entries)
         # self.write({"results":[r for r in result]})
 
 class EntryHandler(BaseHandler):

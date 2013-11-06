@@ -12,8 +12,7 @@ CREATE TABLE insurance (
   update_time datetime,
   description text COMMENT '描述',
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE clause_limit (
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -23,7 +22,7 @@ CREATE TABLE clause_limit (
   create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   update_time datetime NULL,
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
 CREATE TABLE user (
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -31,4 +30,4 @@ CREATE TABLE user (
   password varchar(32) DEFAULT NULL,
   create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
