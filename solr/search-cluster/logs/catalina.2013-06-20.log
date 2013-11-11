@@ -1,0 +1,322 @@
+Jun 20, 2013 5:32:21 AM org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+Jun 20, 2013 6:43:23 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:23 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:23 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:23 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:24 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:25 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:25 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:25 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:25 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:25 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:25 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:25 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "tomcat"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:26 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:27 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:27 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:27 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:27 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:27 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:28 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:29 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "admin"
+Jun 20, 2013 6:43:30 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:30 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:31 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:31 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:31 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:31 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:31 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:31 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:31 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:32 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:33 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:33 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "manager"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:34 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:35 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:36 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:36 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:36 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:36 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:36 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "user"
+Jun 20, 2013 6:43:36 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:37 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "root"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:38 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:39 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:40 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:40 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:40 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:40 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:40 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "role1"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:41 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:42 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:43 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:43 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"
+Jun 20, 2013 6:43:43 AM org.apache.catalina.realm.LockOutRealm authenticate
+WARNING: An attempt was made to authenticate the locked user "both"

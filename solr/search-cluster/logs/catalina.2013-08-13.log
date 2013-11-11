@@ -1,0 +1,4 @@
+Aug 13, 2013 5:14:47 AM org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
+Aug 13, 2013 11:24:08 PM org.apache.coyote.ajp.AjpMessage processHeader
+SEVERE: Invalid message received with signature 18245
