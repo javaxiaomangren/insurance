@@ -1,3 +1,4 @@
+#coding: utf-8
 import pysolr
 import tornado.web
 from tornado.util import ObjectDict

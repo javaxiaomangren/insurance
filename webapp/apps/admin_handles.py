@@ -1,3 +1,4 @@
+#coding: utf-8
 import tornado.web
 from tornado.log import gen_log
 
@@ -16,9 +17,9 @@ class BaseHandler(tornado.web.RequestHandler):
         print "please define your initialize..............."
 
 
-@route(r"/admin/login", name="login")
+@route(r"/auth/login", name="login")
 class LoginHandler(BaseHandler):
-
+    """docstring for ClauseHandle"""
     def get(self):
         #redirect to login url
         gen_log.info("hello %s" % "Yan")
@@ -28,9 +29,9 @@ class LoginHandler(BaseHandler):
         pass
 
 
-@route(r"/admin/logout", name="logout")
+@route(r"/auth/logout", name="logout")
 class LogoutHandler(BaseHandler):
-
+    """docstring for ClauseHandle"""
     def get(self):
         pass
 
@@ -50,12 +51,13 @@ class InsuranceHandler(BaseHandler):
                       FROM insurance i, clause_limit c
                      WHERE i.id = c.insu_id
                 """
+    insert_sql = """INSERT INTO table(field, ) VALUES(%s)"""
 
     def get(self, action):
         result = self.db.query(self.query_sql)
         result_dict = {"result:": result}
         self.write(result_dict)
-
+    #should be aysnc
     def post(self):
         # insu_id = self.get_argument("pro_id", None)
         pro_name = self.get_argument("pro_name", None)
@@ -87,3 +89,36 @@ class InsuranceHandler(BaseHandler):
         else:
             tornado.web.HTTPError(500, "Bad Parameter of form")
         self.redirect("/insurance?action=list")
+
+
+@route(r"/admin/clause", name="clause")
+class ClauseHandle(BaseHandler):
+    """docstring for ClauseHandle"""
+    pass    
+
+
+@route(r"/admin/company", name="company")
+class CompanyHandle(BaseHandler):
+    """docstring for ClauseHandle"""
+    pass
+
+
+@route(r"/admin/category", name="category")
+class CategoryHandle(BaseHandler):
+    """docstring for ClauseHandle"""
+    pass
+
+
+@route(r"/admin/tags", name="tags")
+class TagsHandle(BaseHandler):
+    """docstring for ClauseHandle"""
+    pass
+
+
+@route(r"/admin/img", name="image")
+class ImageHandle(BaseHandler):
+    """docstring for ClauseHandle"""
+    pass
+
+
+

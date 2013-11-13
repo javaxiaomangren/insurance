@@ -53,3 +53,23 @@ class route(object):
 
 def route_redirect(from_, to, name=None):
     route._routes.append(tornado.web.url(from_, tornado.web.RedirectHandler, dict(url=to), name=name))
+
+
+class Transaction(object):
+    """
+        处理事务集合
+        db: mysql db connection
+        Usage:
+        with Transaction(db) as trans_db:
+            trans_db.execute(sql)
+            trans_db.commit()
+    """
+    def __enter__(self, db):
+        """set up tings and return things"""
+        self.tran_db = db 
+        self.tran_db.autocommit(False)
+        return self.tran_db
+
+    def __exit__(self):
+        """tear down thins"""
+        self.tran_db.autocommit(True)
