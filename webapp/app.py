@@ -152,7 +152,7 @@ class IndexHandler(BaseHandler):
         self.render("index.html")
 
     def post(self):
-        solr = pysolr.Solr("http://110.75.189.239:9999/solr/collection1")
+        solr = pysolr.Solr("http://110.75.189.239:9990/solr/insurance")
         #should decode
         args = self.request.arguments
         param = []
