@@ -1,0 +1,740 @@
+Nov 5, 2013 5:47:54 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:47:54 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:47:54 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 5:47:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@5290288e]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 5:47:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@5290288e]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 5:47:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@5290288e]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 5:47:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@5290288e]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 5:47:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@4bd1695e]) and a value of type [com.chenlb.mmseg4j.analysis.MMSegTokenizer] (value [com.chenlb.mmseg4j.analysis.MMSegTokenizer@aa1d2c80]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 5:47:55 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@5290288e]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 5:47:55 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:47:55 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:47:55 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:47:55 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:48:07 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 5:48:08 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:48:08 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:48:08 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2458 ms
+Nov 5, 2013 5:48:08 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 5:48:08 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 5:48:08 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 5:48:11 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [358] milliseconds.
+Nov 5, 2013 5:48:15 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:48:16 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:48:16 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 7793 ms
+Nov 5, 2013 5:54:41 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:54:41 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:54:41 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 5:54:41 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:54:41 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:54:41 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:54:41 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:55:26 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 5:55:27 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:55:27 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:55:27 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2844 ms
+Nov 5, 2013 5:55:27 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 5:55:27 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 5:55:28 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 5:55:30 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [356] milliseconds.
+Nov 5, 2013 5:55:36 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:55:37 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=672ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=1436ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=2111ms
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 5:55:38 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=22ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 5:55:39 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=973ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 5:55:39 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=996ms
+Nov 5, 2013 5:55:39 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=0ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 5:55:39 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 5:55:43 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:55:43 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:55:43 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 15351 ms
+Nov 5, 2013 5:56:15 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:56:15 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:56:15 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 5:56:16 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:56:16 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:56:16 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:56:16 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:56:50 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 5:56:51 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:56:51 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:56:51 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2473 ms
+Nov 5, 2013 5:56:51 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 5:56:51 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 5:56:51 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 5:56:56 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [409] milliseconds.
+Nov 5, 2013 5:57:00 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=686ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=774ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1465ms
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 5:57:01 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=149ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 5:57:02 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=487ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 5:57:02 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=638ms
+Nov 5, 2013 5:57:02 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=7ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 5:57:02 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 5:57:03 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:57:04 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:57:04 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 13036 ms
+Nov 5, 2013 5:57:52 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:57:52 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:57:52 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 5:57:52 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:57:52 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 5:57:52 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 5:57:52 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:16:57 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:16:58 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:16:58 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:16:58 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2447 ms
+Nov 5, 2013 6:16:58 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:16:58 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:16:58 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:17:01 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [358] milliseconds.
+Nov 5, 2013 6:17:06 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:17:07 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=742ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=1084ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1828ms
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:17:08 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=452ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:17:09 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=778ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:17:09 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1232ms
+Nov 5, 2013 6:17:09 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=0ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:17:09 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:17:11 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:17:11 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:17:11 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 13219 ms
+Nov 5, 2013 6:18:43 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:18:44 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:18:44 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 6:18:44 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:18:44 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:18:44 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:18:44 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:26:22 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:26:24 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:26:24 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:26:24 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 3005 ms
+Nov 5, 2013 6:26:24 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:26:24 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:26:24 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:26:35 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:26:36 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=994ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=1399ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=2395ms
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:26:37 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=159ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:26:38 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=773ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:26:38 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=934ms
+Nov 5, 2013 6:26:38 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=0ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:26:38 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:26:43 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 6:26:43 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 6:26:43 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:26:44 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:26:44 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 19805 ms
+Nov 5, 2013 6:26:46 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:26:46 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:26:46 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 6:26:46 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/solr] appears to have started a thread named [searcherExecutor-4-thread-1] but has failed to stop it. This is very likely to create a memory leak.
+Nov 5, 2013 6:26:46 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:26:46 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:26:46 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:26:46 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:37:48 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:37:49 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:37:49 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:37:49 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2732 ms
+Nov 5, 2013 6:37:49 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:37:49 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:37:51 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:37:57 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:37:58 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:37:58 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 8205 ms
+Nov 5, 2013 6:38:13 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:38:13 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:38:13 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 6:38:14 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:38:14 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:38:14 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:38:14 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:39:06 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:39:06 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:39:06 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:39:06 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2656 ms
+Nov 5, 2013 6:39:06 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:39:06 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:39:07 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:39:10 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [455] milliseconds.
+Nov 5, 2013 6:39:14 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=280ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=694ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=976ms
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:39:15 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=143ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:39:16 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=427ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:39:16 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=571ms
+Nov 5, 2013 6:39:16 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=7ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:39:16 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:39:18 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:39:19 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:39:19 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 12237 ms
+Nov 5, 2013 6:39:45 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:39:45 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:39:45 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 6:39:45 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:39:45 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:39:45 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:39:45 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:40:30 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:40:31 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:40:31 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:40:31 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2422 ms
+Nov 5, 2013 6:40:31 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:40:31 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:40:31 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:40:41 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:40:42 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=849ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=1072ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1924ms
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:40:43 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=26ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:40:44 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=599ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:40:44 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=626ms
+Nov 5, 2013 6:40:44 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=0ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:40:44 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:40:45 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:40:45 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:40:45 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 14805 ms
+Nov 5, 2013 6:41:48 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:41:49 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:41:49 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 6:41:49 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:41:49 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:41:49 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:41:49 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:42:12 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:42:13 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:42:13 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:42:13 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 998 ms
+Nov 5, 2013 6:42:13 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:42:13 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:42:13 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:42:25 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:42:26 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=1573ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=861ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=2436ms
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:42:27 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=21ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:42:28 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=620ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:42:28 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=643ms
+Nov 5, 2013 6:42:28 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:42:28 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:42:29 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 6:42:29 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 6:42:30 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:42:30 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:42:30 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 17090 ms
+Nov 5, 2013 6:43:17 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:43:17 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:43:17 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 6:43:18 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:43:18 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:43:18 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:43:18 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:44:44 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:44:45 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:44:45 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:44:45 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2577 ms
+Nov 5, 2013 6:44:45 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:44:45 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:44:46 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:44:48 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [356] milliseconds.
+Nov 5, 2013 6:44:56 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:44:57 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=681ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=1028ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1712ms
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:44:58 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=161ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:44:59 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=1028ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:44:59 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1191ms
+Nov 5, 2013 6:44:59 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=0ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:44:59 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:45:03 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 6:45:03 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 6:45:04 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:45:04 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:45:04 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 18612 ms
+Nov 5, 2013 6:49:19 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:49:19 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:49:19 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Nov 5, 2013 6:49:20 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/solr] appears to have started a thread named [searcherExecutor-4-thread-1] but has failed to stop it. This is very likely to create a memory leak.
+Nov 5, 2013 6:49:20 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [java.lang.ThreadLocal] (value [java.lang.ThreadLocal@66201d6d]) and a value of type [com.chenlb.mmseg4j.analysis.MMSegTokenizer] (value [com.chenlb.mmseg4j.analysis.MMSegTokenizer@c437e597]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 6:49:20 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/solr] created a ThreadLocal with key of type [org.apache.solr.schema.DateField.ThreadLocalDateFormat] (value [org.apache.solr.schema.DateField$ThreadLocalDateFormat@5b13cf49]) and a value of type [org.apache.solr.schema.DateField.ISO8601CanonicalDateFormat] (value [org.apache.solr.schema.DateField$ISO8601CanonicalDateFormat@6b2ed43a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Nov 5, 2013 6:49:20 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:49:20 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:49:20 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:49:20 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:50:16 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64/server:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/lib/amd64:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/jre/../lib/amd64:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Nov 5, 2013 6:50:17 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:50:17 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:50:17 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2557 ms
+Nov 5, 2013 6:50:17 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 5, 2013 6:50:17 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.40
+Nov 5, 2013 6:50:17 PM org.apache.catalina.startup.HostConfig deployWAR
+INFO: Deploying web application archive /home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr.war
+Nov 5, 2013 6:50:20 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [359] milliseconds.
+Nov 5, 2013 6:50:28 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:50:28 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=720ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:50:29 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=1021ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:50:29 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1744ms
+Nov 5, 2013 6:50:29 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=1ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:50:29 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:50:29 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:50:29 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/collection1/dic
+Nov 5, 2013 6:50:29 PM com.chenlb.mmseg4j.Dictionary getInstance
+INFO: try to load dir=/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:50:30 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: chars loaded time=467ms, line=12638, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/chars.dic
+Nov 5, 2013 6:50:31 PM com.chenlb.mmseg4j.Dictionary loadWord
+INFO: words loaded time=983ms, line=149853, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/words.dic
+Nov 5, 2013 6:50:31 PM com.chenlb.mmseg4j.Dictionary loadDic
+INFO: load all dic use time=1451ms
+Nov 5, 2013 6:50:31 PM com.chenlb.mmseg4j.Dictionary loadUnit
+INFO: unit loaded time=0ms, line=22, on file=file:/home/yanghua/apache-tomcat-8.0.0-RC1/webapps/solr/WEB-INF/lib/mmseg4j-core-1.9.1.jar!/data/units.dic
+Nov 5, 2013 6:50:31 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory inform
+INFO: dic load... in=file:/home/yanghua/apache-tomcat-8.0.0-RC1/conf/solr-tomcat/solr/data/words.dic
+Nov 5, 2013 6:50:34 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 6:50:34 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 6:50:34 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-9999"]
+Nov 5, 2013 6:50:34 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Nov 5, 2013 6:50:34 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 17244 ms
+Nov 5, 2013 7:07:37 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 7:07:37 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 7:10:14 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 7:10:14 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 7:10:57 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 7:10:57 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 7:11:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 7:11:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 7:13:45 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 7:13:45 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 7:15:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 7:15:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 7:15:42 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 7:15:42 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 11:23:55 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:23:55 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 11:24:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:24:15 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 11:24:28 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:24:28 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 11:24:28 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:24:28 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 11:24:33 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:24:33 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 11:24:42 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:24:42 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 11:25:09 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:25:09 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode
+Nov 5, 2013 11:25:09 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:25:09 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use max-word mode
+Nov 5, 2013 11:37:06 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: create new Seg ...
+Nov 5, 2013 11:37:06 PM com.chenlb.mmseg4j.solr.MMSegTokenizerFactory newSeg
+INFO: use simple mode

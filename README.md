@@ -1,4 +1,4 @@
 insurance
 =========================
 
-http://www.okbao.com/lvyouxian/
+http://www.okbao.com/lvyouxian

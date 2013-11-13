@@ -1,76 +1,48 @@
 #!/usr/bin/env python
-#
-# Copyright 2009 Facebook
-#
-# Licensed under the Apache License, Version 2.0 (the "License"); you may
-# not use this file except in compliance with the License. You may obtain
-# a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-# License for the specific language governing permissions and limitations
-# under the License.
 
-import markdown
 import os.path
-import re
 import torndb
 import tornado.auth
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
-import unicodedata
-
-import pysolr
-
 from tornado.options import define, options
+
+from apps.utils import route
+
 
 define("port", default=8888, help="run on the given port", type=int)
 define("mysql_host", default="127.0.0.1:3306", help="insurance database host")
 define("mysql_database", default="insurance", help="insurance database name")
 define("mysql_user", default="root", help="insurance database user")
 define("mysql_password", default="admin", help="insurance database password")
+define("solr_path", default="http://110.75.189.239:9999/solr/collection1", help="solr path for search")
+define("prefork", default=False, help="pre-fork across all CPUs", type=bool)
+define("showurls", default=True, help="Show all routed URLs", type=bool)
+define("debug", default=True, help="Show all routed URLs", type=bool)
 
-def ObjectDict(dict):
-    def __getattr__(self, name):
-        try:
-            return self[name]
-        except KeyError:
-            raise AttributeError(name)
 
 class Application(tornado.web.Application):
     def __init__(self):
-        handlers = [
-            (r"/insurance", InsuranceHandler),
-            (r"/admin", HomeHandler),
-            (r"/", IndexHandler),
-            (r"/search", IndexHandler),
-            # (r"/feed", FeedHandler),
-            # (r"/entry/([^/]+)", EntryHandler),
-            # (r"/compose", ComposeHandler),
-            # (r"/auth/login", AuthLoginHandler),
-            # (r"/auth/logout", AuthLogoutHandler),
-        ]
         settings = dict(
             site_title=u"Insurance search",
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
             static_path=os.path.join(os.path.dirname(__file__), "static"),
-            ui_modules={"Entry": EntryModule},
+            # ui_modules={"Entry": EntryModule},
             # xsrf_cookies=True,
             cookie_secret="__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
             login_url="/auth/login",
-            debug=True,
+            debug=options.debug,
         )
-        tornado.web.Application.__init__(self, handlers, **settings)
+        handles = route.get_routes()  # defined with route decorators
+        tornado.web.Application.__init__(self, handles, **settings)
 
-        # Have one global connection to the blog DB across all handlers
         self.db = torndb.Connection(
             host=options.mysql_host, database=options.mysql_database,
             user=options.mysql_user, password=options.mysql_password)
+        self.solr_path = options.solr_path
+        #define log
 
 
 class BaseHandler(tornado.web.RequestHandler):
@@ -279,12 +251,27 @@ class EntryModule(tornado.web.UIModule):
     def render(self, entry):
         return self.render_string("modules/entry.html", entry=entry)
 
+#initialize handles
+__import__('apps', globals(), locals(), ["admin_handles", "search_handles"], -1)
+
 
 def main():
     tornado.options.parse_command_line()
+    if options.showurls:
+        for each in route.get_routes():
+            print each._path.ljust(20), "mapping to RequestHandle-->", each.handler_class.__name__
     http_server = tornado.httpserver.HTTPServer(Application())
-    http_server.listen(options.port)
-    tornado.ioloop.IOLoop.instance().start()
+    print "Starting tornado server on port", options.port
+    if options.prefork:
+        print "\tpre-forking"
+        http_server.bind(options.port)
+        http_server.start()
+    else:
+        http_server.listen(options.port)
+    try:
+        tornado.ioloop.IOLoop.instance().start()
+    except KeyboardInterrupt:
+        pass
 
 
 if __name__ == "__main__":
