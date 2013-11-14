@@ -1,8 +1,0 @@
-Oct 4, 2013 2:28:45 AM org.apache.catalina.startup.HostConfig deleteRedeployResources
-INFO: Undeploying context [/demo]
-Oct 4, 2013 2:28:45 AM org.apache.catalina.startup.HostConfig deployDirectory
-INFO: Deploying web application directory /home/yanghua/apache-tomcat-7.0.40/webapps/demo.bak
-Oct 4, 2013 2:29:05 AM org.apache.catalina.startup.HostConfig deployDirectory
-INFO: Deploying web application directory /home/yanghua/apache-tomcat-7.0.40/webapps/demo
-Oct 4, 2013 2:29:25 AM org.apache.catalina.startup.HostConfig deployDirectory
-INFO: Deploying web application directory /home/yanghua/apache-tomcat-7.0.40/webapps/7
