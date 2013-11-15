@@ -31,18 +31,12 @@ CREATE TABLE tags(
 
 CREATE TABLE clause (
   id INT(11) NOT NULL AUTO_INCREMENT,
-  dupl_id INT(11) NOT NULL  COMMENT '条款的唯一id,用于表示多个保额和多个保期',
-  category_id INT(11) NOT NULL  COMMENT '条款分类',
+  -- dupl_id INT(11) NOT NULL  COMMENT '条款的唯一id,用于表示多个保额和多个保期',
   clause_name VARCHAR(32) NOT NULL COMMENT '条款名称',
-  limits INT(11)  COMMENT '保额',
-  insu_days INT(11) COMMENT '保期(/天)',
-  -- isrange SMALLINT(1) NOT NULL DEFAULT 0 COMMENT '保期是否为范围值，范围值的价格按照天算',
-  price decimal(10, 0) COMMENT '价格',
   -- price_unit VARCHAR(2) COMMENT '价格单位',
   description TEXT COMMENT '条款描述',
-  create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  update_time DATETIME ,
-  PRIMARY KEY (id)
+  category_id INT(11) NOT NULL  COMMENT '条款分类',
+    PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
 CREATE TABLE insurance (
@@ -68,8 +62,12 @@ CREATE TABLE insurance (
 
 CREATE TABLE insu_clause (
   id INT(11) NOT NULL AUTO_INCREMENT,
-  insru_id INT(11) NOT NULL COMMENT '产品id',
+  insu_id INT(11) NOT NULL COMMENT '产品id',
   clause_id INT(11) NOT NULL COMMENT '条款id',
+  limits INT(11)  COMMENT '保额',
+  insu_days INT(11) COMMENT '保期(/天)',
+  -- isrange SMALLINT(1) NOT NULL DEFAULT 0 COMMENT '保期是否为范围值，范围值的价格按照天算',
+  price decimal(10, 0) COMMENT '价格',
   create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   update_time datetime NULL,
   PRIMARY KEY (id)

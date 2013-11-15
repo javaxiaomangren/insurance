@@ -1,23 +1,9 @@
+#coding:utf8
 import tornado.web
 
 
 class route(object):
     """
-    decorates RequestHandlers and builds up a list of routables handlers
-
-    Tech Notes (or 'What the *@# is really happening here?')
-    --------------------------------------------------------
-
-    Everytime @route('...') is called, we instantiate a new route object which
-    saves off the passed in URI.  Then, since it's a decorator, the function is
-    passed to the route.__call__ method as an argument.  We save a reference to
-    that handler with our uri in our class level routes list then return that
-    class to be instantiated as normal.
-
-    Later, we can call the classmethod route.get_routes to return that list of
-    tuples which can be handed directly to the tornado.web.Application
-    instantiation.
-
     Example
     -------
 
@@ -71,5 +57,12 @@ class Transaction(object):
         return self.tran_db
 
     def __exit__(self):
-        """tear down thins"""
+        """tear down things"""
         self.tran_db.autocommit(True)
+
+
+def nice_bool(value):
+    if type(value) is bool:
+        return value
+    false = ('', 'no', 'off', 'false', 'none', '0', 'f')
+    return str(value).lower().strip() not in false

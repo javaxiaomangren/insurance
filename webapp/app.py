@@ -25,7 +25,7 @@ define("debug", default=True, help="Show all routed URLs", type=bool)
 
 
 class Application(tornado.web.Application):
-    def __init__(self):
+    def __init__(self, mysql_database=None):
         settings = dict(
             site_title=u"Insurance search",
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
@@ -38,9 +38,9 @@ class Application(tornado.web.Application):
         )
         handles = route.get_routes()  # defined with route decorators
         tornado.web.Application.__init__(self, handles, **settings)
-
+        self.database = mysql_database and mysql_database or options.mysql_database
         self.db = torndb.Connection(
-            host=options.mysql_host, database=options.mysql_database,
+            host=options.mysql_host, database=self.database,
             user=options.mysql_user, password=options.mysql_password)
         self.solr_path = options.solr_path
         self.db._db.autocommit(False)
