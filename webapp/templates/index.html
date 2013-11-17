@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="../static/css/front.css" rel="stylesheet">
 
+    <!--[if lt IE 9]><script src="../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -69,128 +70,355 @@
         <div class="panel panel-danger">
           <div class="panle-body search-panel">
              <div class="table-responsive">
-     <table class="table">
-       <colgroup>
-          <col class="col-xs-1">
-          <col class="col-xs-5">
-          <col class="col-xs-3">
-          <col class="col-xs-4">
-        </colgroup>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Column heading</th>
-            <th>Column heading</th>
-            <th>Column heading</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="active">
-            <td>1</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="success">
-            <td>3</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="warning">
-            <td>5</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="danger">
-            <td>7</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-        </tbody>
-      </table>
-    </div> <!-- responsive table -->
+                <form role="form">
+                  <table class="table table-hover table-font">
+                   <colgroup>
+                      <col class="col-xs-1">
+                      <col class="col-xs-2">
+                      <col class="col-xs-2">
+                      <col class="col-xs-2">
+                      <col class="col-xs-2">
+                      <col class="col-xs-3">
+                    </colgroup>
+                    <tbody>
+                      <tr class="danger">
+                        <th>保险分类</th>
+                        <td>
+                          <input name="category_id" type="radio" value="0,365" /><span class="chkDesc" title="1天-1岁">少儿意外 
+                        </td>
+                        <td>
+                          <input name="category_id" type="radio" value="365,6569" /><span class="chkDesc" title="1岁-18岁">老年意外
+                        </td>
+                        <td>
+                          <input name="category_id" type="radio" value="6570,21900" /><span class="chkDesc" title="18-60岁">交通意外
+                        </td>
+                        <td>
+                          <input name="category_id" type="radio" value="21901," /><span class="chkDesc" title="60岁以上">综合意外
+                        </td>
+                        <td>
+                          <input name="category_id" type="radio" value="" checked="checked" />不限
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>投保年龄</th>
+                        <td>
+                          <input name="age_cover" type="radio" value="0,365" /><span class="chkDesc" title="1天-1岁">1天-1岁
+                        </td>
+                        <td>
+                          <input name="age_cover" type="radio" value="365,6569" /><span class="chkDesc" title="1岁-18岁">0-18岁
+                        </td>
+                        <td>
+                          <input name="age_cover" type="radio" value="6570,21900" /><span class="chkDesc" title="18-60岁">18-60岁
+                        </td>
+                        <td>
+                          <input name="age_cover" type="radio" value="21901," /><span class="chkDesc" title="60岁以上">60岁以上
+                        </td>
+                        <td>
+                          <input name="age_cover" type="radio" value="" checked="checked" />不限
+                        </td>
+                      </tr>
+                      <tr class="warning">
+                        <th>保障期限</th>
+                        <td>
+                          <input name="insu_days" type="radio" value="0,7" />7天内
+                        </td>
+                        <td>
+                          <input name="insu_days" type="radio" value="8,30" />8-30天
+                        </td>
+                        <td>
+                          <input name="insu_days" type="radio" value="31,90" />1-3个月
+                        </td>
+                        <td>
+                          <input name="insu_days" type="radio" value="31,365" />3-12个月
+                        </td>
+                        <td>
+                          <input name="insu_days" type="radio" value="365" />1年以上&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input name="insu_days" type="radio" value="" checked="checked" />不限
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>保&nbsp;&nbsp;&nbsp;&nbsp;费</th>
+                        <td>
+                          <input name="premium" type="radio" value="0,100" />100元以下
+                        </td>
+                        <td>
+                          <input name="premium" type="radio" value="100,500" />100-500元
+                        </td>
+                        <td>
+                          <input name="premium" type="radio" value="500,1000" />500-1000元
+                        </td>
+                        <td>
+                          <input name="premium" type="radio" value="1000" />1000元以上
+                        </td>
+                        <td>
+                          <input name="premium" type="radio" value="" checked="checked" />不限
+                        </td>
+                      </tr>
+                      <tr class="success">
+                        <th>保险公司</th>
+                        <td colspan="5">
+                          <input name="company_id" type="radio" value="" checked="checked" /><span class="aline">不限</span>
+                          <input name="company_id" type="checkbox" value="49" /><span class="aline">中国人寿</span>
+                          <input name="company_id" type="checkbox" value="32" /><span class="aline">泰康人寿</span>
+                          <input name="company_id" type="checkbox" value="50" /><span class="aline">太平洋人寿</span>
+                          <input name="company_id" type="checkbox" value="46" /><span class="aline">平安人寿</span>
+                          <input name="company_id" type="checkbox" value="46" /><span class="aline">长城保险</span>
+                          <input name="company_id" type="checkbox" value="46" /><span class="aline">都邦保险</span>
+                          <input name="company_id" type="checkbox" value="46" /><span class="aline">大都会人寿</span>
+                          <button class="btn btn-link" data-toggle="modal" data-target="#company_modal">更多</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th rowspan="2"><br />条款/保额</th>
+                        <td colspan="5">
+                          <input name="clause" type="radio" value="" checked="checked" /><span class="aline">不限</span>
+                          <input name="clause" type="checkbox" value="49" /><span class="aline">非驾车时意外身故/残疾</span>
+                          <input name="clause" type="checkbox" value="32" /><span class="aline">航空意外</span>
+                          <input name="clause" type="checkbox" value="50" /><span class="aline">火车意外</span>
+                          <input name="clause" type="checkbox" value="46" /><span class="aline">轮船意外</span>
+                          <input name="clause" type="checkbox" value="46" /><span class="aline">4意外住院津贴</span>
+                          <input name="clause" type="checkbox" value="46" /><span class="aline">航班到达延误</span>
+                          <input name="clause" type="checkbox" value="46" /><span class="aline">高额意外医疗</span>
+                        </td>
+                      </tr>
+                      <tr class="warning">
+                        <td colspan="5">
+                          <input name="limits" type="radio" value="" checked="checked"/><span class="aline">不限</span>
+                          <input name="limits" type="radio" value="0,100000" /><span class="aline">10万以下</span>
+                          <input name="limits" type="radio" value="100001,200000" /><span class="aline">10-20万</span>
+                          <input name="limits" type="radio" value="200001,500000" /><span class="aline">20-50万</span>
+                          <input name="limits" type="radio" value="500001,1000000" /><span class="aline">50-100万</span>
+                          <input name="limits" type="radio" value="1000001" /><span class="aline">100万以上</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>标&nbsp;&nbsp;&nbsp;&nbsp;签</th>
+                        <td colspan="5">
+                          <input name="tags" type="radio" value="" checked="checked"/><span class="aline">不限</span>
+                          <input name="tags" type="checkbox" value="1" /><span class="aline">全面医疗</span>
+                          <input name="tags" type="checkbox" value="2" /><span class="aline">高额医疗</span>
+                          <input name="tags" type="checkbox" value="46" /><span class="aline">医疗费垫付</span>
+                          <input name="tags" type="checkbox" value="4" /><span class="aline">百万保额</span>
+                          <input name="tags" type="checkbox" value="8" /><span class="aline">全球救援</span>
+                          <input name="tags" type="checkbox" value="33" /><span class="aline">高风险运动</span>
+                          <input name="tags" type="checkbox" value="32" /><span class="aline">高额第三者责任</span>
+                          <input name="tags" type="checkbox" value="34" /><span class="aline">高原地区保障</span>
+                          <input name="tags" type="checkbox" value="35" /><span class="aline">交通高额保障</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>保险名称</th>
+                        <td  colspan="5">
+                           <div class="col-lg-6 input-group ">
+                              <input type="text" class="form-control" name="pro_name">
+                              <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">搜&nbsp;&nbsp;索</button>
+                              </span>
+                          </div><!-- /input-group -->
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>已选条件</th>
+                        <td  colspan="5">
+                          <div id="conditions" class="_tag">
+                          <p>
+                            <span class="label label-danger"  >
+                              航空意外:10万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                            </span>
+                            <span class="label label-warning">
+                              轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove" ></a>
+                            </span>
+                            <span class="label label-primary" >
+                              轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                            </span>
+                                 <span class="label label-primary" >
+                              轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                            </span>
+                                 <span class="label label-primary" >
+                              轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                            </span>
+                                 <span class="label label-primary" >
+                              轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                            </span>
+                                 <span class="label label-primary" >
+                              轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                            </span>
+                            </p>
+                            <p>
+                              <span class="label label-primary" >
+                                轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                              </span>
+                              <span class="label label-primary" >
+                                轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                              </span>
+                              <span class="label label-primary" >
+                                轮船意外:100万 <a href="#" class="glyphicon glyphicon-remove"></a>
+                              </span>
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </form>
+              </div> <!-- responsive table -->
           </div> <!-- panle-body -->
         </div> <!--search panel -->
-        <div class="">
-          <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Column heading</th>
-            <th>Column heading</th>
-            <th>Column heading</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="active">
-            <td>1</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="success">
-            <td>3</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="warning">
-            <td>5</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-          <tr class="danger">
-            <td>7</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
-        </tbody>
-      </table>
-        </div> <!-- data-list -->
+        <div class="alert alert-warning" style="padding:2px 20px">
+          <div class="row">
+            <div class="col-md-3 col-xs-1"  style="margin-top:6px"> 
+              <strong><span> 共查到152条</span></strong>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+              <input type="button" class="btn btn-primary active" value="价格" />&nbsp;&nbsp;
+              <input type="button" class="btn btn-default" value="保额" />
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row"> -->
+          <div class="row">
+            <div class="col-md-7">
+              <div class="media">
+                <a href="#" class="pull-left"><img src="../static/uploads/20120215095300.gif"></a>
+                <div class="media-body">
+                  <h4 class="media-head"> <a href="#">“车路有我”交通意外垫付保障计划</a></h4>
+                  <h5><small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small></h5>
+                  <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
+                  <p>
+                    <span class="label label-default">全面医疗</span>
+                    <span class="label label-primary">高额医疗</span>
+                    <span class="label label-success">医疗费垫付</span>
+                    <span class="label label-info">百万保额</span>
+                  </p>
+                </div>
+              </div> <!-- media -->
+            </div>
+            <div class="col-md-3">
+              <ol>
+                <li>人身意外身故/残疾：5万</li>
+                <li>人身意外烧烫伤：5万</li>
+                <li>意外医药补偿：2500元</li>
+                <li>医疗运送和送返：2.5万</li>
+                <li>ISOS境内救援服务：有</li>
+              </ol>
+            </div>
+            <div class="col-md-2">
+            ￥5.0
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-7">
+              <div class="media">
+                <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
+                <div class="media-body">
+                  <h4 class="media-head"> <a href="#">“车路有我”交通意外垫付保障计划</a></h4>
+                  <h5><small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small></h5>
+                  <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
+                  <p>
+                    <span class="label label-success">医疗费垫付</span>
+                    <span class="label label-default">高风险运动</span>
+                    <span class="label label-primary">高额第三者责任</span>
+                    <span class="label label-success">高原地区保障</span>
+                    <span class="label label-info">交通高额保障</span>
+                  </p>
+                </div>
+              </div> <!-- media -->
+            </div>
+            <div class="col-md-3">
+              <ol>
+                <li>人身意外身故/残疾：5万</li>
+                <li>人身意外烧烫伤：5万</li>
+                <li>意外医药补偿：2500元</li>
+                <li>医疗运送和送返：2.5万</li>
+                <li>ISOS境内救援服务：有</li>
+              </ol>
+            </div>
+            <div class="col-md-2">
+            ￥5.0
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-7">
+              <div class="media">
+                <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
+                <div class="media-body">
+                  <h4 class="media-head"> <a href="#">“车路有我”交通意外垫付保障计划</a></h4>
+                  <h5><small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small></h5>
+                  <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
+                  <p>
+                    <span class="label label-success">医疗费垫付</span>
+                    <span class="label label-default">高风险运动</span>
+                    <span class="label label-primary">高额第三者责任</span>
+                    <span class="label label-success">高原地区保障</span>
+                    <span class="label label-info">交通高额保障</span>
+                  </p>
+                  <p>
+                    <span class="label label-danger">医疗费垫付</span>
+                    <span class="label label-danger">医疗费垫付</span>
+                    <span class="label label-danger">交通高额保障</span>
+                  </p>
+                </div>
+              </div> <!-- media -->
+            </div>
+            <div class="col-md-3">
+              <ol>
+                <li>人身意外身故/残疾：5万</li>
+                <li>人身意外烧烫伤：5万</li>
+                <li>意外医药补偿：2500元</li>
+                <li>医疗运送和送返：2.5万</li>
+                <li>ISOS境内救援服务：有</li>
+              </ol>
+            </div>
+            <div class="col-md-2">
+            ￥5.0
+            </div>
+          </div>
+
+        <!-- </div> -->
+          <div class="pager-location">
+            <ul class="pagination">
+              <li><a href="#">上一页</a></li>
+              <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li class="disabled"><a href="javascript:void(0)">...</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">下一页</a></li>
+            </ul>
+          </div>
+
       </div> <!-- container -->
     </div> <!-- wrap content -->
-
+    <!-- modals -->
+    <div class="modal fade" id="company_modal"  tabindex="-1" role="dialog" aria-labelledby="companyModalPanel" aria-hidden="true" aria-describedby="cdsfdsf">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">保险公司</h4>
+          </div>
+          <div class="modal-body">
+            <input name="company_id" type="checkbox" value="49" /><span class="aline">中国人寿</span>
+            <input name="company_id" type="checkbox" value="32" /><span class="aline">泰康人寿</span>
+            <input name="company_id" type="checkbox" value="50" /><span class="aline">太平洋人寿</span>
+            <input name="company_id" type="checkbox" value="46" /><span class="aline">平安人寿</span>
+            <input name="company_id" type="checkbox" value="46" /><span class="aline">长城保险</span>
+            <input name="company_id" type="checkbox" value="46" /><span class="aline">都邦保险</span>
+            <input name="company_id" type="checkbox" value="46" /><span class="aline">大都会人寿</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div> <!-- modal-content -->
+      </div> <!-- modal-dialog -->
+    </div> <!-- company_modal -->
+    <!-- modals -->
     <div id="footer">
       <div class="container">
         <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
@@ -202,5 +430,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/application.js"></script>
   </body>
 </html>
