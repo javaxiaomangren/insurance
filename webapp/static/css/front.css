@@ -102,10 +102,33 @@ body {
   margin-right: 200px;
   margin-top: 50px;
 }
-._tag >p> span{
+._tag{
   margin-left: 10px;
-} 
+}
 
+.tag_alert {
+  display: inline;
+  padding: 5px;
+ }
+
+.panel-inherit{
+  margin: 0px;
+  background-color: inherit;
+  border: 0px;
+}
+.panel-inherit > .panel-collapse > .panel-body {
+    background-color: #ffffff;
+    padding: 10px 10px;
+}
+
+.panel-inherit > .panel-inherit-heading{
+    padding-left: 0px;
+}
+
+.close-tag{
+    color: inherit;
+    font-size: 16px;
+}
 
 /*
 .bs-example {
