@@ -2,27 +2,55 @@
 <schema name="example" version="1.5">
  <fields>    
    <field name="id" type="int" indexed="true" stored="true" required="true" multiValued="false" /> 
-   <field name="pro_name" type="textSimple" indexed="true" stored="true"/>
-   <field name="insu_days" type="textSimple" indexed="true" stored="true"/>
-
-   <field name="price"  type="float" indexed="true" stored="true"/>
+   <field name="proName" type="textSimple" indexed="true" stored="true"/>
    <field name="maxAge" type="int" indexed="true" stored="true" />
    <field name="minAge" type="int" indexed="true" stored="true" />
    <field name="description" type="textSimple" indexed="true" stored="true"/>
-   <field name="tags" type="textSimple" indexed="true" stored="true"/>
-   <field name="clause" type="textSimple" indexed="true" stored="true" multiValued="true"/>
-   <field name="limits" type="int" indexed="true" stored="true" multiValued="true"/>
-   <field name="_version_" type="long" indexed="true" stored="true"/>
+   <!--重要告知-->
+   <field name="notice" type="textSimple" indexed="true" stored="true"/>
+   <!--适合人群-->
+   <field name="suitable" type="textSimple" indexed="true" stored="true"/>
+   <!--样本文件--> 
+   <field name="example" type="string" indexed="true" stored="true"/>
+  <!--保费-->
+   <field name="price"  type="float" indexed="true" stored="true"/>
+   <!--销量-->
+   <field name="salesVolume" type="int" indexed="true" stored="true" />
+   <!--可购买份数-->
+   <field name="buyCount" type="int" indexed="true" stored="true" />
+   <!--是否有效,1有效-->
+   <field name="validFlag" type="int" indexed="true" stored="true" />
+   <!--条款/保额-->
+<!--   <field name="clauseId" type="int" indexed="true" stored="true" multiValued="true" /> -->
+  <field name="clauseName" type="textSimple" indexed="true" stored="true" multiValued="true" />
+  <field name="limits" type="float" indexed="true" stored="true" multiValued="true" />
+  <!--保障期限-->
+  <field name="insuDays" type="int" indexed="true" stored="true" multiValued="true" />
+
+
+   <field name="companyId" type="int" indexed="true" stored="true" />
+   <field name="companyName" type="string" indexed="true" stored="true" />
+   <field name="companyLogo" type="string" indexed="true" stored="true" />
+
+   <field name="categoryId" type="int" indexed="true" stored="true" />
+   <field name="categoryName" type="string" indexed="true" stored="true" />
+   
+   <field name="imgUrl" type="string" indexed="true" stored="true" multiValued="true" />
+   
+   <field name="tagId" type="int" indexed="true" stored="true" multiValued="true" />
+   <field name="tagName" type="string" indexed="true" stored="true" multiValued="true" />
+
 
    <!--Chinese word segmentation by mmseg4j-->   
    <field name="simple" type="textSimple" indexed="true" stored="true" multiValued="true"/>  
    <field name="complex" type="textComplex" indexed="true" stored="true" multiValued="true"/>  
    <field name="text" type="textMaxWord" indexed="true" stored="true" multiValued="true"/>
    
+   <field name="_version_" type="long" indexed="true" stored="true"/>
   </fields>
 
    <uniqueKey>id</uniqueKey>
-   <defaultSearchField>pro_name</defaultSearchField>
+   <defaultSearchField>proName</defaultSearchField>
 
   <types>
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
