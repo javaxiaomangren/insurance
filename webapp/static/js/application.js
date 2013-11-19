@@ -4,6 +4,7 @@ var tagsMap = new Map()
 
 _setEvent("company_id",  "comp_{0}", template, "label-warning")
 _setEvent("tags", "tags_{0}", template, "label-info")
+_setEvent("clause", "clause_{0}", template, "label-danger")
 
 function _setEvent(name, keyPlate, template, css) {
     var ckBox = $("[name="+name+"][type=checkbox]")

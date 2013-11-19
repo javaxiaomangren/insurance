@@ -1,7 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,575 +16,580 @@
     <!-- Custom styles for this template -->
     <link href="../static/css/front.css" rel="stylesheet">
 
-    <!--[if lt IE 9]><script src="../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- Wrap all page content here -->
-    <div id="wrap">
+<!-- Wrap all page content here -->
+<div id="wrap">
 
-      <!-- Fixed navbar -->
-      <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Project name</a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
         </div>
-      </div> <!-- nav -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+<!-- nav -->
 
-      <!-- Begin page content -->
-      <div class="container">
-        <div class="panel panel-danger">
-          <div class="panel-body search-panel">
-             <div class="table-responsive">
-                <form role="form">
-                  <table class="table table-hover table-font">
-                   <colgroup>
-                      <col class="col-xs-1">
-                      <col class="col-xs-2">
-                      <col class="col-xs-2">
-                      <col class="col-xs-2">
-                      <col class="col-xs-2">
-                      <col class="col-xs-3">
-                   </colgroup>
-                   <tbody>
-                      <tr class="danger">
-                        <th>保险分类</th>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="category_id" type="radio" value="0,365" /><span class="chkDesc" title="1天-1岁">少儿意外</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="category_id" type="radio" value="365,6569" /><span class="chkDesc" title="1岁-18岁">老年意外</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="category_id" type="radio" value="6570,21900" /><span class="chkDesc" title="18-60岁">交通意外</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="category_id" type="radio" value="21901," /><span class="chkDesc" title="60岁以上">综合意外</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="category_id" type="radio" value="" checked="checked" />不限
-                          </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>投保年龄</th>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="age_cover" type="radio" value="0,365" /><span class="chkDesc" title="1天-1岁">1天-1岁</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="age_cover" type="radio" value="365,6569" /><span class="chkDesc" title="1岁-18岁">0-18岁</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="age_cover" type="radio" value="6570,21900" /><span class="chkDesc" title="18-60岁">18-60岁</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="age_cover" type="radio" value="21901," /><span class="chkDesc" title="60岁以上">60岁以上</span>
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="age_cover" type="radio" value="" checked="checked" />不限
-                          </label>
-                        </td>
-                      </tr>
-                      <tr class="warning">
-                        <th>保障期限</th>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="insu_days" type="radio" value="0,7" />7天内
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="insu_days" type="radio" value="8,30" />8-30天
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="insu_days" type="radio" value="31,90" />1-3个月
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="insu_days" type="radio" value="31,365" />3-12个月
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="insu_days" type="radio" value="365" />1年以上&nbsp;&nbsp;&nbsp;&nbsp;
-                          </label>
-                          <input name="insu_days" type="radio" value="" checked="checked" />不限
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>保&nbsp;&nbsp;&nbsp;&nbsp;费</th>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="premium" type="radio" value="0,100" />100元以下
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="premium" type="radio" value="100,500" />100-500元
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="premium" type="radio" value="500,1000" />500-1000元
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="premium" type="radio" value="1000" />1000元以上
-                          </label>
-                        </td>
-                        <td>
-                          <label class="radio-inline">
-                            <input name="premium" type="radio" value="" checked="checked" />不限
-                          </label>
-                        </td>
-                      </tr>
-                      <tr class="success">
-                        <th>保险公司</th>
-                        <td colspan="5">
-                            <div id="company_panel" class="panel panel-inherit">
-                              <div class="panel-heading panel-inherit-heading">
-                                <label class="radio-inline">
-                                  <input name="company_id" type="radio" value="" checked="checked" /><span class="aline">不限</span>
-                                </label>
-                                <label class="checkbox-inline">
-                                  <input name="company_id" type="checkbox" value="1"/>太平洋人寿
-                                </label>
-                                <label class="checkbox-inline">
-                                  <input name="company_id" type="checkbox" value="2" />泰康人寿
-                                </label>
-                                <label class="checkbox-inline">
-                                  <input name="company_id" type="checkbox" value="3" />中国人寿
-                                </label>
-                                <label class="checkbox-inline">
-                                  <input name="company_id" type="checkbox" value="4" />平安人寿
-                                </label>
-                                <label class="checkbox-inline">
-                                  <input name="company_id" type="checkbox" value="5" />长城保险
-                                </label>
-                                <label class="checkbox-inline">
-                                  <input name="company_id" type="checkbox" value="6" />都邦保险
-                                </label>
-                                <label class="checkbox-inline">
-                                  <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    展开/关闭
-                                  </a>
-                                  </label>
-                              </div>
-                              <div id="collapseOne" class="panel-collapse collapse fade">
-                                <div class="panel-body">
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="8" />太平洋人寿
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="9" />泰康人寿
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="10" />中国人寿
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="11" />平安人寿
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="12" />长城保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="13" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="14" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="15" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="16" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="17" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="18" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="19" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="20" />都邦保险
-                                      </label>
-                                    <label class="checkbox-inline">
-                                      <input name="company_id" type="checkbox" value="21" />大都会人寿
-                                    </label>
+<!-- Begin page content -->
+<div class="container">
+<div class="panel panel-danger">
+<div class="panel-body search-panel">
+<div class="table-responsive">
+<form role="form">
+<table class="table table-hover table-font">
+<colgroup>
+    <col class="col-xs-1">
+    <col class="col-xs-2">
+    <col class="col-xs-2">
+    <col class="col-xs-2">
+    <col class="col-xs-2">
+    <col class="col-xs-3">
+</colgroup>
+<tbody>
+<tr class="danger">
+    <th>保险分类</th>
+    <td>
+        <label class="radio-inline">
+            <input name="category_id" type="radio" value="2"/>少儿意外</span>
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="category_id" type="radio" value="1"/>老年意外</span>
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="category_id" type="radio" value="4"/>交通意外</span>
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="category_id" type="radio" value="6"/>综合意外
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="category_id" type="radio" value="" checked="checked"/>不限
+        </label>
+    </td>
+</tr>
+<tr>
+    <th>投保年龄</th>
+    <td>
+        <label class="radio-inline">
+            <input name="age_cover" type="radio" value="0,365"/>1天-1岁
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="age_cover" type="radio" value="365,6569"/>0-18岁
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="age_cover" type="radio" value="6570,21900"/>18-60岁
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="age_cover" type="radio" value="21901,"/>60岁以上
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="age_cover" type="radio" value="" checked="checked"/>不限
+        </label>
+    </td>
+</tr>
+<tr class="warning">
+    <th>保障期限</th>
+    <td>
+        <label class="radio-inline">
+            <input name="insu_days" type="radio" value="0,7"/>7天内
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="insu_days" type="radio" value="8,30"/>8-30天
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="insu_days" type="radio" value="31,90"/>1-3个月
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="insu_days" type="radio" value="31,365"/>3-12个月
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="insu_days" type="radio" value="365"/>1年以上
+        </label>
+        <lable class="radio-inline">
+             <input name="insu_days" type="radio" value="" checked="checked"/>不限
+        </lable>
 
-                                </div>
-                              </div>
-                             </div>
->>>>>>> a6927c4bffdfe4c3f360c5a350472e36cdd39b59
-                        </td>
-                      </tr>
-                      <tr>
-                        <th rowspan="2"><br />条款/保额</th>
-                        <td colspan="5">
-                          <label class="radio-inline">
-                            <input name="clause" type="radio" value="" checked="checked" /><span class="aline">不限</span>
-                          </label>
-                          <label class="checkbox-inline">
-                            <input name="clause" type="checkbox" value="49" />非驾车时意外身故/残疾
-                          </label>
-                          <label class="checkbox-inline">
-                            <input name="clause" type="checkbox" value="32" />航空意外
-                          </label>
-                          <label class="checkbox-inline">
-                            <input name="clause" type="checkbox" value="50" />火车意外
-                          </label>
-                          <label class="checkbox-inline">
-                            <input name="clause" type="checkbox" value="46" />轮船意外
-                          </label>
-                          <label class="checkbox-inline">
-                            <input name="clause" type="checkbox" value="46" />4意外住院津贴
-                          </label>
-                          <label class="checkbox-inline">
-                            <input name="clause" type="checkbox" value="46" />航班到达延误
-                          </label>
-                          <label class="checkbox-inline">
-                            <input name="clause" type="checkbox" value="46" />高额意外医疗
-                          </label>
-
-                        </td>
-                      </tr>
-                      <tr class="warning">
-                        <td colspan="5">
-                          <label class="radio-inline">
-                            <input name="limits" type="radio" value="" checked="checked"/><span class="aline">不限</span>
-                          </label>
-                          <label class="radio-inline">
-                            <input name="limits" type="radio" value="0,100000" /><span class="aline">10万以下</span>
-                          </label>
-                          <label class="radio-inline">
-                            <input name="limits" type="radio" value="100001,200000" /><span class="aline">10-20万</span>
-                          </label>
-                          <label class="radio-inline">
-                            <input name="limits" type="radio" value="200001,500000" /><span class="aline">20-50万</span>
-                          </label>
-                          <label class="radio-inline">
-                            <input name="limits" type="radio" value="500001,1000000" /><span class="aline">50-100万</span>
-                          </label>
-                          <label class="radio-inline">
-                            <input name="limits" type="radio" value="1000001" /><span class="aline">100万以上</span>
-                          </label>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>标&nbsp;&nbsp;&nbsp;&nbsp;签</th>
-                        <td colspan="5">
-                            <div class="panel panel-inherit">
-                                <div class="panel-heading panel-inherit-heading">
-                                  <label class="radio-inline">
-                                    <input name="tags" type="radio" value="" checked="checked"/><span class="aline">不限</span>
-                                  </label>
-                                  <label class="checkbox-inline">
-                                    <input type="checkbox" name="tags" type="checkbox" value="1">全面医疗
-                                  </label>
-                                  <label class="checkbox-inline">
-                                    <input name="tags" type="checkbox" value="2" />高额医疗
-                                  </label>
-                                  <label class="checkbox-inline">
-                                    <input type="checkbox" name="tags" type="checkbox" value="3">全面医疗
-                                  </label>
-                                  <label class="checkbox-inline">
-                                    <input name="tags" type="checkbox" value="4" />医疗费垫付
-                                  </label>
-                                  <label class="checkbox-inline">
-                                    <input type="checkbox" name="tags" type="checkbox" value="5">全面医疗
-                                  </label>
-                                  <label class="checkbox-inline">
-                                    <input name="tags" type="checkbox" value="6" />高额第三者责任
-                                  </label>
-                                  <label class="checkbox-inline">
-                                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#tags_collapse" >
-                                        展开/关闭
-                                      </a>
-                                  </label>
-                                </div>
-                                <div id="tags_collapse" class="panel-collapse collapse fade">
-                                    <div id="tags_collapse_body" class="panel-body">
-                                      <label class="checkbox-inline">
-                                        <input type="checkbox" name="tags" type="checkbox" value="7">全面医疗
-                                      </label>
-                                      <label class="checkbox-inline">
-                                        <input name="tags" type="checkbox" value="8" />高额医疗
-                                      </label>
-                                      <label class="checkbox-inline">
-                                        <input type="checkbox" name="tags" type="checkbox" value="8">全面医疗
-                                      </label>
-                                      <label class="checkbox-inline">
-                                        <input name="tags" type="checkbox" value="22" />医疗费垫付
-                                      </label>
-                                      <label class="checkbox-inline">
-                                        <input type="checkbox" name="tags" type="checkbox" value="21">全面医疗
-                                      </label>
-                                      <label class="checkbox-inline">
-                                        <input name="tags" type="checkbox" value="32" />高额第三者责任
-                                      </label>
-                                        <label class="checkbox-inline">
-                                        <input name="tags" type="checkbox" value="42" />高额第三者责任
-                                      </label>
-                                        <label class="checkbox-inline">
-                                        <input name="tags" type="checkbox" value="52" />高额第三者责任
-                                      </label>
-                                        <label class="checkbox-inline">
-                                        <input name="tags" type="checkbox" value="62" />高额第三者责任
-                                      </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>保险名称</th>
-                        <td  colspan="5">
-                           <div class="col-lg-6 input-group ">
-                              <input type="text" class="form-control" name="pro_name">
+    </td>
+</tr>
+<tr>
+    <th>保&nbsp;&nbsp;&nbsp;&nbsp;费</th>
+    <td>
+        <label class="radio-inline">
+            <input name="premium" type="radio" value="0,100"/>100元以下
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="premium" type="radio" value="100,500"/>100-500元
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="premium" type="radio" value="500,1000"/>500-1000元
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="premium" type="radio" value="1000"/>1000元以上
+        </label>
+    </td>
+    <td>
+        <label class="radio-inline">
+            <input name="premium" type="radio" value="" checked="checked"/>不限
+        </label>
+    </td>
+</tr>
+<tr class="success">
+    <th>保险公司</th>
+    <td colspan="5">
+        <div id="company_panel" class="panel panel-inherit">
+            <div class="panel-heading panel-inherit-heading">
+                <label class="radio-inline">
+                    <input name="company_id" type="radio" value="" checked="checked"/><span class="aline">不限</span>
+                </label>
+                <label class="checkbox-inline">
+                    <input name="company_id" type="checkbox" value="1"/>太平洋人寿
+                </label>
+                <label class="checkbox-inline">
+                    <input name="company_id" type="checkbox" value="2"/>泰康人寿
+                </label>
+                <label class="checkbox-inline">
+                    <input name="company_id" type="checkbox" value="3"/>中国人寿
+                </label>
+                <label class="checkbox-inline">
+                    <input name="company_id" type="checkbox" value="4"/>平安人寿
+                </label>
+                <label class="checkbox-inline">
+                    <input name="company_id" type="checkbox" value="5"/>长城保险
+                </label>
+                <label class="checkbox-inline">
+                    <input name="company_id" type="checkbox" value="6"/>都邦保险
+                </label>
+                <label class="checkbox-inline">
+                    <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        展开/关闭
+                    </a>
+                </label>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse fade">
+                <div class="panel-body">
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="8"/>太平洋人寿
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="9"/>泰康人寿
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="10"/>中国人寿
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="11"/>平安人寿
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="12"/>长城保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="13"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="14"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="15"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="16"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="17"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="18"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="19"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="20"/>都邦保险
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="company_id" type="checkbox" value="21"/>大都会人寿
+                    </label>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th rowspan="2"><br/>条款/保额</th>
+    <td colspan="5">
+        <label class="radio-inline">
+            <input name="clause" type="radio" value="" checked="checked"/><span class="aline">不限</span>
+        </label>
+        <label class="checkbox-inline">
+            <input name="clause" type="checkbox" value="49"/>非驾车时意外身故/残疾
+        </label>
+        <label class="checkbox-inline">
+            <input name="clause" type="checkbox" value="32"/>航空意外
+        </label>
+        <label class="checkbox-inline">
+            <input name="clause" type="checkbox" value="50"/>火车意外
+        </label>
+        <label class="checkbox-inline">
+            <input name="clause" type="checkbox" value="46"/>轮船意外
+        </label>
+        <label class="checkbox-inline">
+            <input name="clause" type="checkbox" value="46"/>4意外住院津贴
+        </label>
+        <label class="checkbox-inline">
+            <input name="clause" type="checkbox" value="46"/>航班到达延误
+        </label>
+        <label class="checkbox-inline">
+            <input name="clause" type="checkbox" value="46"/>高额意外医疗
+        </label>
+    </td>
+</tr>
+<tr class="warning">
+    <td colspan="5">
+        <label class="radio-inline">
+            <input name="limits" type="radio" value="" checked="checked"/><span class="aline">不限</span>
+        </label>
+        <label class="radio-inline">
+            <input name="limits" type="radio" value="0,100000"/><span class="aline">10万以下</span>
+        </label>
+        <label class="radio-inline">
+            <input name="limits" type="radio" value="100001,200000"/><span class="aline">10-20万</span>
+        </label>
+        <label class="radio-inline">
+            <input name="limits" type="radio" value="200001,500000"/><span class="aline">20-50万</span>
+        </label>
+        <label class="radio-inline">
+            <input name="limits" type="radio" value="500001,1000000"/><span class="aline">50-100万</span>
+        </label>
+        <label class="radio-inline">
+            <input name="limits" type="radio" value="1000001"/><span class="aline">100万以上</span>
+        </label>
+    </td>
+</tr>
+<tr>
+    <th>标&nbsp;&nbsp;&nbsp;&nbsp;签</th>
+    <td colspan="5">
+        <div class="panel panel-inherit">
+            <div class="panel-heading panel-inherit-heading">
+                <label class="radio-inline">
+                    <input name="tags" type="radio" value="" checked="checked"/><span class="aline">不限</span>
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="tags" type="checkbox" value="1">全面医疗
+                </label>
+                <label class="checkbox-inline">
+                    <input name="tags" type="checkbox" value="2"/>高额医疗
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="tags" type="checkbox" value="3">全面医疗
+                </label>
+                <label class="checkbox-inline">
+                    <input name="tags" type="checkbox" value="4"/>医疗费垫付
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" name="tags" type="checkbox" value="5">全面医疗
+                </label>
+                <label class="checkbox-inline">
+                    <input name="tags" type="checkbox" value="6"/>高额第三者责任
+                </label>
+                <label class="checkbox-inline">
+                    <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#tags_collapse">
+                        展开/关闭
+                    </a>
+                </label>
+            </div>
+            <div id="tags_collapse" class="panel-collapse collapse fade">
+                <div id="tags_collapse_body" class="panel-body">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="tags" type="checkbox" value="7">全面医疗
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="tags" type="checkbox" value="8"/>高额医疗
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="tags" type="checkbox" value="8">全面医疗
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="tags" type="checkbox" value="22"/>医疗费垫付
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="tags" type="checkbox" value="21">全面医疗
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="tags" type="checkbox" value="32"/>高额第三者责任
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="tags" type="checkbox" value="42"/>高额第三者责任
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="tags" type="checkbox" value="52"/>高额第三者责任
+                    </label>
+                    <label class="checkbox-inline">
+                        <input name="tags" type="checkbox" value="62"/>高额第三者责任
+                    </label>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <th>保险名称</th>
+    <td colspan="5">
+        <div class="col-lg-6 input-group ">
+            <input type="text" class="form-control" name="pro_name">
                               <span class="input-group-btn">
                                 <button class="btn btn-primary" type="button">搜&nbsp;&nbsp;索</button>
                               </span>
-                          </div><!-- /input-group -->
-                        </td>
-                      </tr>
-                      <tr>
-                        <th>已选条件</th>
-                        <td  colspan="5">
-                          <div id="conditions" class="_tag">
-
-                          </div>
-                        </td>
-                      </tr>
-                   </tbody>
-                  </table>
-                </form>
-              </div> <!-- responsive table -->
-          </div> <!-- panle-body -->
-        </div> <!--search panel -->
-        <div class="alert alert-warning" style="padding:2px 20px">
-          <div class="row">
-            <div class="col-md-3 col-xs-1"  style="margin-top:6px"> 
-              <strong><span> 共查到152条</span></strong>
-            </div>
-            <div class="col-md-6"></div>
-            <div class="col-md-3">
-              <input type="button" class="btn btn-primary active" value="价格" />&nbsp;&nbsp;
-              <input type="button" class="btn btn-default" value="保额" />
-            </div>
-          </div>
         </div>
-        <!-- <div class="row"> -->
-          <div class="row">
-            <div class="col-md-7">
-              <div class="media">
-                <a href="#" class="pull-left"><img src="../static/uploads/20120215095300.gif"></a>
-                <div class="media-body">
-                  <h4 class="media-head"> <a href="#">“车路有我”交通意外垫付保障计划</a></h4>
-                  <h5><small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small></h5>
-                  <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
-                  <p>
+        <!-- /input-group -->
+    </td>
+</tr>
+<tr>
+    <th>已选条件</th>
+    <td colspan="5">
+        <div id="conditions" class="_tag">
+
+        </div>
+    </td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+<!-- responsive table -->
+</div>
+<!-- panle-body -->
+</div>
+<!--search panel -->
+
+<div class="alert alert-warning" style="padding:2px 20px">
+    <div class="row">
+        <div class="col-md-3 col-xs-1" style="margin-top:6px">
+            <strong><span> 共查到152条</span></strong>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-3">
+            <input type="button" class="btn btn-primary active" value="价格"/>&nbsp;&nbsp;
+            <input type="button" class="btn btn-default" value="保额"/>
+        </div>
+    </div>
+</div>
+
+<!-- data list rows-->
+<div class="row">
+    <div class="col-md-7">
+        <div class="media">
+            <a href="#" class="pull-left"><img src="../static/uploads/20120215095300.gif"></a>
+
+            <div class="media-body">
+                <h4 class="media-head"><a href="#">“车路有我”交通意外垫付保障计划</a></h4>
+                <h5>
+                    <small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small>
+                </h5>
+                <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
+
+                <p>
                     <span class="label label-default">全面医疗</span>
                     <span class="label label-primary">高额医疗</span>
                     <span class="label label-success">医疗费垫付</span>
                     <span class="label label-info">百万保额</span>
-                  </p>
-                </div>
-              </div> <!-- media -->
+                </p>
             </div>
-            <div class="col-md-3">
-              <ol>
-                <li>人身意外身故/残疾：5万</li>
-                <li>人身意外烧烫伤：5万</li>
-                <li>意外医药补偿：2500元</li>
-                <li>医疗运送和送返：2.5万</li>
-                <li>ISOS境内救援服务：有</li>
-              </ol>
-            </div>
-            <div class="col-md-2">
-            ￥5.0
-            </div>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-md-7">
-              <div class="media">
-                <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
-                <div class="media-body">
-                  <h4 class="media-head"> <a href="#">“车路有我”交通意外垫付保障计划</a></h4>
-                  <h5><small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small></h5>
-                  <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
-                  <p>
+        </div>
+        <!-- media -->
+    </div>
+    <div class="col-md-3">
+        <ol>
+            <li>人身意外身故/残疾：5万</li>
+            <li>人身意外烧烫伤：5万</li>
+            <li>意外医药补偿：2500元</li>
+            <li>医疗运送和送返：2.5万</li>
+            <li>ISOS境内救援服务：有</li>
+        </ol>
+    </div>
+    <div class="col-md-2">
+        ￥5.0
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-md-7">
+        <div class="media">
+            <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
+
+            <div class="media-body">
+                <h4 class="media-head"><a href="#">“车路有我”交通意外垫付保障计划</a></h4>
+                <h5>
+                    <small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small>
+                </h5>
+                <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
+
+                <p>
                     <span class="label label-success">医疗费垫付</span>
                     <span class="label label-default">高风险运动</span>
                     <span class="label label-primary">高额第三者责任</span>
                     <span class="label label-success">高原地区保障</span>
                     <span class="label label-info">交通高额保障</span>
-                  </p>
-                </div>
-              </div> <!-- media -->
+                </p>
             </div>
-            <div class="col-md-3">
-              <ol>
-                <li>人身意外身故/残疾：5万</li>
-                <li>人身意外烧烫伤：5万</li>
-                <li>意外医药补偿：2500元</li>
-                <li>医疗运送和送返：2.5万</li>
-                <li>ISOS境内救援服务：有</li>
-              </ol>
-            </div>
-            <div class="col-md-2">
-            ￥5.0
-            </div>
-          </div>
-          <hr />
-          <div class="row">
-            <div class="col-md-7">
-              <div class="media">
-                <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
-                <div class="media-body">
-                  <h4 class="media-head"> <a href="#">“车路有我”交通意外垫付保障计划</a></h4>
-                  <h5><small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small></h5>
-                  <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
-                  <p>
+        </div>
+        <!-- media -->
+    </div>
+    <div class="col-md-3">
+        <ol>
+            <li>人身意外身故/残疾：5万</li>
+            <li>人身意外烧烫伤：5万</li>
+            <li>意外医药补偿：2500元</li>
+            <li>医疗运送和送返：2.5万</li>
+            <li>ISOS境内救援服务：有</li>
+        </ol>
+    </div>
+    <div class="col-md-2">
+        ￥5.0
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-md-7">
+        <div class="media">
+            <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
+
+            <div class="media-body">
+                <h4 class="media-head"><a href="#">“车路有我”交通意外垫付保障计划</a></h4>
+                <h5>
+                    <small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small>
+                </h5>
+                <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
+
+                <p>
                     <span class="label label-success">医疗费垫付</span>
                     <span class="label label-default">高风险运动</span>
                     <span class="label label-primary">高额第三者责任</span>
                     <span class="label label-success">高原地区保障</span>
                     <span class="label label-info">交通高额保障</span>
-                  </p>
-                  <p>
+                </p>
+
+                <p>
                     <span class="label label-danger">医疗费垫付</span>
                     <span class="label label-danger">医疗费垫付</span>
                     <span class="label label-danger">交通高额保障</span>
-                  </p>
-                </div>
-              </div> <!-- media -->
+                </p>
             </div>
-            <div class="col-md-3">
-              <ol>
-                <li>人身意外身故/残疾：5万</li>
-                <li>人身意外烧烫伤：5万</li>
-                <li>意外医药补偿：2500元</li>
-                <li>医疗运送和送返：2.5万</li>
-                <li>ISOS境内救援服务：有</li>
-              </ol>
-            </div>
-            <div class="col-md-2">
-            ￥5.0
-            </div>
-          </div>
-
-        <!-- </div> -->
-          <div class="pager-location">
-            <ul class="pagination">
-              <li><a href="#">上一页</a></li>
-              <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li class="disabled"><a href="javascript:void(0)">...</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">下一页</a></li>
-            </ul>
-          </div>
-
-      </div> <!-- container -->
-    </div> <!-- wrap content -->
-    <!-- modals -->
-    <div class="modal fade" id="company_modal"  tabindex="-1" role="dialog" aria-labelledby="companyModalPanel" aria-hidden="true" aria-describedby="cdsfdsf">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="myModalLabel">保险公司</h4>
-          </div>
-          <div class="modal-body">
-            <input name="company_id" type="checkbox" value="49" /><span class="aline">中国人寿</span>
-            <input name="company_id" type="checkbox" value="32" /><span class="aline">泰康人寿</span>
-            <input name="company_id" type="checkbox" value="50" /><span class="aline">太平洋人寿</span>
-            <input name="company_id" type="checkbox" value="46" /><span class="aline">平安人寿</span>
-            <input name="company_id" type="checkbox" value="46" /><span class="aline">长城保险</span>
-            <input name="company_id" type="checkbox" value="46" /><span class="aline">都邦保险</span>
-            <input name="company_id" type="checkbox" value="46" /><span class="aline">大都会人寿</span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div> <!-- modal-content -->
-      </div> <!-- modal-dialog -->
-    </div> <!-- company_modal -->
-    <!-- modals -->
-    <div id="footer">
-      <div class="container">
-        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
-      </div>
+        </div>
+        <!-- media -->
     </div>
+    <div class="col-md-3">
+        <ol>
+            <li>人身意外身故/残疾：5万</li>
+            <li>人身意外烧烫伤：5万</li>
+            <li>意外医药补偿：2500元</li>
+            <li>医疗运送和送返：2.5万</li>
+            <li>ISOS境内救援服务：有</li>
+        </ol>
+    </div>
+    <div class="col-md-2">
+        ￥5.0
+    </div>
+</div>
+<!-- data list div row-->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/application.js"></script>
-  </body>
+<div class="pager-location">
+    <ul class="pagination">
+        <li><a href="#">上一页</a></li>
+        <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li class="disabled"><a href="javascript:void(0)">...</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">下一页</a></li>
+    </ul>
+</div>
+
+</div>
+<!-- container -->
+</div>
+<!-- wrap content -->
+
+<div id="footer">
+    <div class="container">
+        <p class="text-muted credit">
+            <a href="http://martinbean.co.uk">Martin Bean</a> and <a
+                href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/application.js"></script>
+</body>
 </html>
