@@ -261,7 +261,7 @@
             <input name="limits" type="radio" value="500001,1000000"/><span class="aline">50-100万</span>
         </label>
         <label class="radio-inline">
-            <input name="limits" type="radio" value="1000001"/><span class="aline">100万以上</span>
+            <input name="limits" type="radio" value="1000000,10000010"/><span class="aline">100万以上</span>
         </label>
     </td>
 </tr>
@@ -364,7 +364,7 @@
 <div class="alert alert-warning" style="padding:2px 20px">
     <div class="row">
         <div class="col-md-3 col-xs-1" style="margin-top:6px">
-            <strong><span> 共查到152条</span></strong>
+            <strong><span> 共查到{{ len(entries) }}条</span></strong>
         </div>
         <div class="col-md-6"></div>
         <div class="col-md-3">
@@ -373,62 +373,27 @@
         </div>
     </div>
 </div>
-
+{% for entry in entries %}
 <!-- data list rows-->
 <div class="row">
     <div class="col-md-7">
         <div class="media">
-            <a href="#" class="pull-left"><img src="../static/uploads/20120215095300.gif"></a>
+            <a href="#" class="pull-left"><img src="{{ static_url('uploads/'+entry.companyLogo) }}/"></a>
 
             <div class="media-body">
-                <h4 class="media-head"><a href="#">“车路有我”交通意外垫付保障计划</a></h4>
+                <h4 class="media-head"><a href="#">{{ entry.proName }}</a></h4>
                 <h5>
-                    <small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small>
+                    <small>平安养老 承保年龄：{{ entry.minAge/365 or entry.minAge }} - {{ entry.maxAge }} | 保险期限：{{ entry.insuDays[0] }} | 保额：{{ sorted(entry.limits)[0]}} - {{ sorted(entry.limits)[-1:][0]  }}</small>
                 </h5>
-                <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
-
+                <p>{{ entry.description }}</p>
                 <p>
-                    <span class="label label-default">全面医疗</span>
-                    <span class="label label-primary">高额医疗</span>
-                    <span class="label label-success">医疗费垫付</span>
-                    <span class="label label-info">百万保额</span>
-                </p>
-            </div>
-        </div>
-        <!-- media -->
-    </div>
-    <div class="col-md-3">
-        <ol>
-            <li>人身意外身故/残疾：5万</li>
-            <li>人身意外烧烫伤：5万</li>
-            <li>意外医药补偿：2500元</li>
-            <li>医疗运送和送返：2.5万</li>
-            <li>ISOS境内救援服务：有</li>
-        </ol>
-    </div>
-    <div class="col-md-2">
-        ￥5.0
-    </div>
-</div>
-<hr/>
-<div class="row">
-    <div class="col-md-7">
-        <div class="media">
-            <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
-
-            <div class="media-body">
-                <h4 class="media-head"><a href="#">“车路有我”交通意外垫付保障计划</a></h4>
-                <h5>
-                    <small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small>
-                </h5>
-                <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
-
-                <p>
-                    <span class="label label-success">医疗费垫付</span>
-                    <span class="label label-default">高风险运动</span>
+                    {% for tag in entry.tagName %}
+                        <span class="label label-success">{{ tag }}</span>
+     <!--                <span class="label label-default">高风险运动</span>
                     <span class="label label-primary">高额第三者责任</span>
                     <span class="label label-success">高原地区保障</span>
-                    <span class="label label-info">交通高额保障</span>
+                    <span class="label label-info">交通高额保障</span> -->
+                    {% end %}
                 </p>
             </div>
         </div>
@@ -436,62 +401,22 @@
     </div>
     <div class="col-md-3">
         <ol>
-            <li>人身意外身故/残疾：5万</li>
-            <li>人身意外烧烫伤：5万</li>
-            <li>意外医药补偿：2500元</li>
-            <li>医疗运送和送返：2.5万</li>
-            <li>ISOS境内救援服务：有</li>
+            {% for clause in entry.clauseName %}
+                <li>{{ clause }}</li>
+            {% end %}
         </ol>
     </div>
     <div class="col-md-2">
-        ￥5.0
+        ￥{{ entry.price }}
     </div>
 </div>
-<hr/>
 <div class="row">
-    <div class="col-md-7">
-        <div class="media">
-            <a href="#" class="pull-left"><img src="../static/uploads/1327324211723.gif"></a>
-
-            <div class="media-body">
-                <h4 class="media-head"><a href="#">“车路有我”交通意外垫付保障计划</a></h4>
-                <h5>
-                    <small>平安养老 承保年龄：18-60周岁 | 保险期限：1年 | 保额：12万 - 30万</small>
-                </h5>
-                <p>保障全面，既保障车主司机的人身意外和医疗保障，还包括陪同乘客的保障。适合自驾车人或司机人群。</p>
-
-                <p>
-                    <span class="label label-success">医疗费垫付</span>
-                    <span class="label label-default">高风险运动</span>
-                    <span class="label label-primary">高额第三者责任</span>
-                    <span class="label label-success">高原地区保障</span>
-                    <span class="label label-info">交通高额保障</span>
-                </p>
-
-                <p>
-                    <span class="label label-danger">医疗费垫付</span>
-                    <span class="label label-danger">医疗费垫付</span>
-                    <span class="label label-danger">交通高额保障</span>
-                </p>
-            </div>
-        </div>
-        <!-- media -->
-    </div>
-    <div class="col-md-3">
-        <ol>
-            <li>人身意外身故/残疾：5万</li>
-            <li>人身意外烧烫伤：5万</li>
-            <li>意外医药补偿：2500元</li>
-            <li>医疗运送和送返：2.5万</li>
-            <li>ISOS境内救援服务：有</li>
-        </ol>
-    </div>
-    <div class="col-md-2">
-        ￥5.0
+    <div class="col-md-12">
+        <hr />
     </div>
 </div>
+{% end %}
 <!-- data list div row-->
-
 <div class="pager-location">
     <ul class="pagination">
         <li><a href="#">上一页</a></li>

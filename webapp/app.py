@@ -12,6 +12,8 @@ from tornado.options import define, options
 
 from apps.utils import route
 
+from apps.search_handles import InsuranceEntry
+
 
 define("port", default=8888, help="run on the given port", type=int)
 define("mysql_host", default="127.0.0.1:3306", help="insurance database host")
@@ -30,7 +32,7 @@ class Application(tornado.web.Application):
             site_title=u"Insurance search",
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
             static_path=os.path.join(os.path.dirname(__file__), "static"),
-            # ui_modules={"Entry": EntryModule},
+            ui_modules={"InsuranceEntry": InsuranceEntry},
             # xsrf_cookies=True,
             cookie_secret="__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
             login_url="/auth/login",
