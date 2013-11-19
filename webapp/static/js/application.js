@@ -1,10 +1,11 @@
-var template = "<span id=\"{0}\" class=\"label {1} _tag\" >{2}&nbsp<a href=\"#\" data-toggle=\"tooltip\" title=\"删除条件\" class=\"close-tag\" onclick=\"closeIt('{3}', {4})\">&times</a></span>"
+var template = "<span id=\"{0}\" class=\"label {1} _tag\" >{2}&nbsp<a href=\"#\" data-toggle=\"tooltip\" title=\"删除条件\" class=\"close-tag\" onclick=\"closeIt('{3}', '{4}')\">&times</a></span>"
 /*global map*/
 var tagsMap = new Map()
+$(document ).ready(print_tags(tagsMap))
 
-_setEvent("company_id",  "comp_{0}", template, "label-warning")
-_setEvent("tags", "tags_{0}", template, "label-info")
-_setEvent("clause", "clause_{0}", template, "label-danger")
+_setEvent("companyId",  "comp_{0}", template, "label-warning")
+_setEvent("tagId", "tags_{0}", template, "label-info")
+_setEvent("clauseName", "clause_{0}", template, "label-danger")
 
 function _setEvent(name, keyPlate, template, css) {
     var ckBox = $("[name="+name+"][type=checkbox]")
@@ -24,14 +25,18 @@ function _setEvent(name, keyPlate, template, css) {
     ckBox.each(function (i, elem) {
         var cb = $(elem)
         cb.click(function () {
-            radio.removeAttr("checked")
             var key = keyPlate.format(cb.val())
             var label = template.format(cb.val(), css, cb.parent().text(), name, cb.val())
             if (cb.attr('checked') === 'checked' || cb.attr('checked') === true) {
+                if ($("[name="+name+"][type=checkbox]:checked").length === 0) {
+                    radio.click()
+                    radio.attr("checked", 'true')
+                }
                 tagsMap.remove(key)
                 cb.removeAttr('checked')
             } else {
                 cb.attr('checked', 'true')
+                radio.removeAttr("checked")
                 tagsMap.put(key, label)
             }
             print_tags(tagsMap)
@@ -87,6 +92,11 @@ String.prototype.format = function (args) {
         return this
     }
 }
+
+function search(){
+    $("#searchForm").submit()
+}
+
 /**
  * 自定义key-value Map
  * 支持添加，删除，获取，迭代，keys等基本操作
