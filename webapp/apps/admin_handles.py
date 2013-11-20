@@ -137,12 +137,12 @@ class CompanyHandle(BaseHandler):
     """docstring for ClauseHandle"""
 
     def get(self):
-        company = self.db.query(sqls.QR_COMPANY)
+        # company = self.db.query(sqls.QR_COMPANY)
         #TODO RENDER COMPANY
-        self.render_string("/admin/company.html", company)
+        self.render("admin/add_company.html")
 
     def post(self):
-        name = self.get_argument("company_name")
+        name = self.get_argument("companyName")
         logo = self.get_argument("logo", u'')
         if not nice_bool(name):
             raise tornado.web.HTTPError(500, "company name can not be null")

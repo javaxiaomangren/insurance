@@ -167,3 +167,34 @@ Array.prototype.remove = function() {
     }
     return this;
 };
+
+/**
+ * parse a int number to readable date
+ * @param year
+ * @returns {string}
+ * Usage: to_date_str(400)--> return 1年1个月5天
+ */
+function to_date_str(year) {
+    try {
+        parseInt(year)
+    } catch(err) {
+        alert("Error on parse "+year+" to Int")
+        return "0"
+    }
+    if (year < 365 ) {
+        if (year < 30) {
+            return year + "天"
+        }
+        if (year % 30 == 0){
+            return year / 30 + "个月"
+        } else {
+             return parseInt(year / 30) + "个月" + year % 30 + "天"
+        }
+    } else {
+        if (year % 365 == 0) {
+            return (year / 365) + "年"
+        } else {
+            return parseInt(year / 365) + "年" + to_date_str((year % 365))
+        }
+    }
+}
