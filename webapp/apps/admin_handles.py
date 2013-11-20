@@ -1,5 +1,7 @@
 #coding: utf-8
 import datetime
+import time
+import uuid
 import tornado.web
 from tornado.log import gen_log
 
@@ -132,41 +134,88 @@ class InsuClauseHandle(BaseHandler):
                                  insu_days, price, update_time)
         self.write(str(lastid))
 
-@route(r"/admin/company", name="company")
+@route(r"/admin/company/(.*)", name="company")
 class CompanyHandle(BaseHandler):
     """docstring for ClauseHandle"""
 
-    def get(self):
-        # company = self.db.query(sqls.QR_COMPANY)
-        #TODO RENDER COMPANY
-        self.render("admin/add_company.html")
+    def get(self, action):
+        if not action:
+            self.render("admin/add_company.html")
+        elif "list" == action:
+            entries = self.db.query(sqls.QR_COMPANY)
+            self.render("admin/list-compnay.html", entries=entries)
+        elif "forSelect" == action:
+            entries = self.db.query(sqls.QR_COMPANY)
+            self.render("admin/slect-compnay.html", entries=entries)
+        else:
+            raise tornado.web.HTTPError(404)
 
-    def post(self):
+    def post(self, action):
+        """TODO:but it's not recommend, because all upload date is load on RAM,
+         the best way is use nginx loadup module, but thses complex
+        """
+        if not "save" == action:
+            raise tornado.web.HTTPError(404)
         name = self.get_argument("companyName")
-        logo = self.get_argument("logo", u'')
         if not nice_bool(name):
             raise tornado.web.HTTPError(500, "company name can not be null")
-        lastid = self.db.execute(sqls.INST_COMPANY, *(name, logo))
+        logoName = ""
+        if self.request.files:
+            path = self.application.settings["static_path"] + "\\upload\\"
+            logoName = saveFile(self.request.files, "logo", path)
+        compnayId = self.get_argument("companyId", None)
+        if compnayId:
+            #TODO delete old image
+            lastid = self.db.execute("UPDATE", *(name, logoName, compnayId))
+        else:
+            lastid = self.db.execute(sqls.INST_COMPANY, *(name, logoName))
         self.write(str(lastid))
 
 
-@route(r"/admin/category", name="category")
+@route(r"/admin/(\d+)/company", name="edit_company")
+class EditCompany(BaseHandler):
+    """docstring for ClassName"""
+    def get(self, company_id):
+        company = self.db.query(sqls.QR_COMPANY)
+        if not company:
+            raise tornado.web.HTTPError(404)
+        self.render("admin/edit_company.html", company=company)
+
+
+
+@route(r"/admin/category/(.*)", name="category")
 class CategoryHandle(BaseHandler):
     """docstring for ClauseHandle"""
 
-    def get(self):
-        category = self.db.query(sqls.QR_CATEGORY)
-        #TODO RENDER CATEGORY
-        self.render_string("/admin/category.html", category)
+    def get(self, action):
+        if not action:
+            self.render_string("admin/add_category.html")
+        elif "list" == action:
+            category = self.db.query(sqls.QR_CATEGORY)
+            self.render_string("admin/list_category.html", category)
+        elif "forSelect" == action:
+            category = self.db.query(sqls.QR_CATEGORY)
+            self.render_string("admin/select_category.html", category)
+        raise tornado.web.HTTPError(404)    
 
     def post(self):
-        name = self.get_argument("category_name")
+        id = self.get_argument("categoryId", None)
+        name = self.get_argument("categoryName")
         desc = self.get_argument("description", u'')
-        parent = self.get_argument("parent_id", 0)
+        parent = self.get_argument("parentId", 0)
         if not nice_bool(name):
             raise tornado.web.HTTPError(500, "category name can not be null")
-        lastid = self.db.execute(sqls.INST_CATEGORY, name, desc, parent)
+        if id:
+            pass
+        else:
+            lastid = self.db.execute(sqls.INST_CATEGORY, name, desc, parent)
         self.write(str(lastid))
+
+
+@route(r"/admin/(\d+)/category", name="edit_category")
+class CategoryHandle(BaseHandler):
+    def get(self, categoryId):
+        pass
 
 
 @route(r"/admin/tags/(.*)", name="tags")
@@ -205,3 +254,14 @@ class ImageHandle(BaseHandler):
         self.write(str(lastid))
 
 
+def saveFile(files, key, path):
+    fl = files[key][0]
+    req_name = fl["filename"]
+    body = fl["body"]
+    # ctn_type = logo["content_type"]
+    # if "image" in ctn_type:
+    timestamp = int(time.time()+300)
+    fileName = str(timestamp) + "_" + str(uuid.uuid1()) +"."+ req_name.split(".").pop()
+    with open(path+fileName, "w") as f:
+        f.write(body)
+    return fileName
