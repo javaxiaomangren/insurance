@@ -51,33 +51,38 @@ class LogoutHandler(BaseHandler):
 @route(r"/admin", name="admin")
 class AdminHandler(BaseHandler):
     def get(self):
-        self.render("admin/home.html")
+        self.redirect("/admin/insurance/")
 
 
-@route(r"/admin/insurance", name="insurance")
+@route(r"/admin/insurance/(.*)$", name="insurance")
 class InsuranceHandler(BaseHandler):
-    def get(self):
-        result = self.db.query(sqls.QR_INSURANCE)
-        result_dict = {"result:": result}
-        self.write(result_dict)
+    def get(self, action):
+        if not action:
+            category = self.db.query(sqls.QR_SIMPLE_CATEGORY)
+            company = self.db.query(sqls.QR_SIMPLE_COMPANY)
+            tags = self.db.query(sqls.QR_TAGS)
+            self.render("admin/home.html", categories=category, companies=company, tags=tags)
+        if "list" == action:
+            entries = self.db.execute("SELECT * FROM insurance")
+            self.render("admin/list_insurance.html", entries=entries)
+        raise tornado.web.HTTPError(404)
 
     #should be aysnc
-    def post(self):
+    def post(self, action):
         args = self.get_argument
-        lastid = self.db.execute(sqls.INST_INSURANCE, *get_insurance_args(args))
-        self.write(str(lastid))
+        id = args("id")
+        if id:
+            #do update
+            pass
 
-
-@route(r"/admin/test/(.*)$", name="edit_insurance")
-class EditInsuranceHandle(BaseHandler):
-    def get(self, id):
-        print id
+        self.db.execute(sqls.INST_INSURANCE, *get_insurance_args(args))
+        self.render("list")
 
 
 def get_insurance_args(args):
-    pro_name = args("pro_name")
-    min_age = args("min_age", 1)
-    max_age = args("max_age", min_age)
+    pro_name = args("proName")
+    min_age = args("minAge", 1)
+    max_age = args("maxAge", min_age)
     notice = args("notice", u'')
     description = args("description", u'')
     tags = args("tags", u'')
@@ -97,21 +102,43 @@ def get_insurance_args(args):
         price, sales_volume, buy_count, update_time
 
 
-@route(r"/admin/clause", name="clause")
+@route(r"/admin/clause/(.*)$", name="clause")
 class ClauseHandle(BaseHandler):
     """docstring for ClauseHandle"""
-    def get(self):
-        pass
+    def get(self, action):
+        if not action:
+            category = self.db.query(sqls.QR_SIMPLE_CATEGORY)
+            self.render("admin/add_clause.html", entries=category)
+        if "list" == action:
+            clauses = self.db.query(sqls.QR_CLAUSE)
+            self.render("admin/list_clause.html", entries=clauses)
+        elif "forSelect" == action:
+            self.render("admin/select_clause.html")
 
-    def post(self):
+    def post(self, action):
         args = self.get_argument
-        name = args("clause_name")
+        id = args("clauseId", None)
+        name = args("clauseName")
         desc = args("description", u'')
-        cate_id = args("category_id")
-        if not (nice_bool(name) and nice_bool(cate_id)):
+        cate_id = args("categoryId")
+        if len(name) < 2 or len(desc) < 2:
             raise tornado.web.HTTPError(500)
-        lastid = self.db.execute(sqls.INST_CLAUSE, name, desc, cate_id)
-        self.write(str(lastid))
+        if id:
+            #do update
+            pass
+        self.db.execute(sqls.INST_CLAUSE, name, desc, cate_id)
+        self.redirect("list")
+
+
+@route("/admin/(\d+)/clause/(edit|del)", name="edit_clause")
+class EditClause(BaseHandler):
+
+    def get(self, clauseId, action):
+        clause = self.db.query(sqls.QR_CLAUSE)
+        if "del" == action and clause:
+            self.db.execute("DELETE FROM clause WHERE id = %s ", clauseId)
+            self.redirect("/admin/clause/list")
+        raise tornado.web.HTTPError(404)
 
 
 @route(r"/admin/insu_clause", name="insu_clause")
@@ -134,7 +161,8 @@ class InsuClauseHandle(BaseHandler):
                                  insu_days, price, update_time)
         self.write(str(lastid))
 
-@route(r"/admin/company/(.*)", name="company")
+
+@route(r"/admin/company/(.*)$", name="company")
 class CompanyHandle(BaseHandler):
     """docstring for ClauseHandle"""
 
@@ -143,10 +171,10 @@ class CompanyHandle(BaseHandler):
             self.render("admin/add_company.html")
         elif "list" == action:
             entries = self.db.query(sqls.QR_COMPANY)
-            self.render("admin/list-compnay.html", entries=entries)
+            self.render("admin/list_company.html", entries=entries)
         elif "forSelect" == action:
             entries = self.db.query(sqls.QR_COMPANY)
-            self.render("admin/slect-compnay.html", entries=entries)
+            self.render("admin/select-company.html", entries=entries)
         else:
             raise tornado.web.HTTPError(404)
 
@@ -156,83 +184,119 @@ class CompanyHandle(BaseHandler):
         """
         if not "save" == action:
             raise tornado.web.HTTPError(404)
-        name = self.get_argument("companyName")
-        if not nice_bool(name):
+        name = self.get_argument("companyName", u'')
+        if len(name) < 2:
             raise tornado.web.HTTPError(500, "company name can not be null")
         logoName = ""
         if self.request.files:
-            path = self.application.settings["static_path"] + "\\upload\\"
+            path = "static/uploads/"
             logoName = saveFile(self.request.files, "logo", path)
-        compnayId = self.get_argument("companyId", None)
-        if compnayId:
+        companyId = self.get_argument("companyId", None)
+        if companyId:
             #TODO delete old image
-            lastid = self.db.execute("UPDATE", *(name, logoName, compnayId))
+            self.write("TODO update")
+            # lastId = self.db.execute("UPDATE", *(name, logoName, companyId))
         else:
-            lastid = self.db.execute(sqls.INST_COMPANY, *(name, logoName))
-        self.write(str(lastid))
+            self.db.execute(sqls.INST_COMPANY, *(name, logoName))
+        self.redirect("/admin/company/list")
 
 
-@route(r"/admin/(\d+)/company", name="edit_company")
+@route(r"/admin/(\d+)/company/(edit|del)$", name="edit_company")
 class EditCompany(BaseHandler):
     """docstring for ClassName"""
-    def get(self, company_id):
+    def get(self, company_id, action):
         company = self.db.query(sqls.QR_COMPANY)
         if not company:
             raise tornado.web.HTTPError(404)
-        self.render("admin/edit_company.html", company=company)
+        if "del" == action:
+            self.db.execute("DELETE FROM company where id = %s", company_id)
+            self.redirect("/admin/company/list")
+        if "edit" == action:
+            self.render("admin/edit_company.html", entry=company)
+        raise tornado.web.HTTPError(404)
 
 
-
-@route(r"/admin/category/(.*)", name="category")
+@route(r"/admin/category/(.*)$", name="category")
 class CategoryHandle(BaseHandler):
     """docstring for ClauseHandle"""
 
     def get(self, action):
         if not action:
-            self.render_string("admin/add_category.html")
+            category = self.db.query(sqls.QR_SIMPLE_CATEGORY)
+            self.render("admin/add_category.html", entries=category)
         elif "list" == action:
             category = self.db.query(sqls.QR_CATEGORY)
-            self.render_string("admin/list_category.html", category)
+            self.render("admin/list_category.html", entries=category)
         elif "forSelect" == action:
             category = self.db.query(sqls.QR_CATEGORY)
-            self.render_string("admin/select_category.html", category)
-        raise tornado.web.HTTPError(404)    
+            self.render("admin/select_category.html", category)
+        raise tornado.web.HTTPError(404)
 
-    def post(self):
+    def post(self, action):
         id = self.get_argument("categoryId", None)
         name = self.get_argument("categoryName")
         desc = self.get_argument("description", u'')
         parent = self.get_argument("parentId", 0)
-        if not nice_bool(name):
+        if len(name) < 2:
             raise tornado.web.HTTPError(500, "category name can not be null")
         if id:
             pass
         else:
-            lastid = self.db.execute(sqls.INST_CATEGORY, name, desc, parent)
-        self.write(str(lastid))
+            self.db.execute(sqls.INST_CATEGORY, name, desc, parent)
+            self.redirect("/admin/category/list")
 
 
-@route(r"/admin/(\d+)/category", name="edit_category")
+@route(r"/admin/(\d+)/category/(edit|del)", name="edit_category")
 class CategoryHandle(BaseHandler):
-    def get(self, categoryId):
-        pass
+    def get(self, categoryId, action):
+        category = self.db.query("SELECT * FROM category WHERE id = %s", categoryId)
+        if not category:
+            raise tornado.web.HTTPError(404)
+        if action and action == "edit":
+            pass
+        if "del" == action:
+            self.db.execute("DELETE FROM category WHERE id = %s", categoryId)
+            self.redirect("/admin/category/list")
 
 
-@route(r"/admin/tags/(.*)", name="tags")
+@route(r"/admin/tags/(.*)$", name="tags")
 class TagsHandle(BaseHandler):
     """docstring for ClauseHandle"""
 
-    def get(self, tag_id):
-        print tag_id
-        tags = self.db.query(sqls.QR_TAGS)
-        #TODO RENDER TAGS
+    def get(self, action):
+        if not action:
+            self.render("admin/add_tags.html")
+        elif "list" == action:
+            tags = self.db.query(sqls.QR_TAGS)
+            self.render("admin/list_tags.html", entries=tags)
+        elif "forSelect" == action:
+            tags = self.db.query(sqls.QR_CATEGORY)
+            self.render("admin/select_tags.html", entries=tags)
+        raise tornado.web.HTTPError(404)
 
-    def post(self, tag_id):
-        tag_name = self.get_argument("tag_name")
-        if not nice_bool(tag_name):
+    def post(self, action):
+        id = self.get_argument("tagsId", None)
+        tag_name = self.get_argument("tagsName")
+        if len(tag_name) < 2:
             raise tornado.web.HTTPError(500)
-        lastid = self.db.execute(sqls.INST_TAGS, tag_name)
-        self.write(str(lastid))
+        if id:
+            #do update
+            pass
+        self.db.execute(sqls.REPLACE_TAGS, tag_name)
+        self.redirect("list")
+
+
+@route(r"/admin/(\d+)/tags/(edit|del)", name="edit_tags")
+class TagsHandle(BaseHandler):
+    def get(self, tagId, action):
+        tags = self.db.query("SELECT * FROM tags WHERE id = %s", tagId)
+        if not tags:
+            raise tornado.web.HTTPError(404)
+        if action and action == "edit":
+            pass
+        if "del" == action:
+            self.db.execute("DELETE FROM tags WHERE id = %s", tagId)
+            self.redirect("/admin/tags/list")
 
 
 @route(r"/admin/img", name="image")
@@ -258,10 +322,9 @@ def saveFile(files, key, path):
     fl = files[key][0]
     req_name = fl["filename"]
     body = fl["body"]
-    # ctn_type = logo["content_type"]
-    # if "image" in ctn_type:
-    timestamp = int(time.time()+300)
-    fileName = str(timestamp) + "_" + str(uuid.uuid1()) +"."+ req_name.split(".").pop()
-    with open(path+fileName, "w") as f:
+    timestamp = int(time.time() + 300)
+    fileName = "%d_%s.%s" % (timestamp, str(uuid.uuid1()), req_name.split(".").pop())
+    gen_log.info(fileName)
+    with open(path + fileName, "w") as f:
         f.write(body)
     return fileName

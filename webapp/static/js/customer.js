@@ -1,60 +1,12 @@
 //设置下拉框的事件
 setEvents("#min_age_list", "a", function () {
-    $("#age_min").val(this.text)
+    $("#minAge").val(this.text)
 })
 
 setEvents("#max_age_list", "a", function () {
-    $("#age_max").val(this.text)
+    $("#maxAge").val(this.text)
 })
 
-setEvents("#clause_list", "a", function () {
-    $("#clause").val(this.text)
-})
-
-setEvents("#limit_list", "a", function () {
-    $("#limit").val(this.text)
-    $("#limits").val(this.text)
-})
-
-setEvents("#tags_list", "a", function () {
-    var oldval = $("#tags").val()
-    $("#tags").val(this.text + "," + oldval)
-    $("#tags").css("display", "inline")
-})
-//表单验证
-$("#insu_form").submit(function () {
-    if ($("#pro_name").val() === "") {
-        alert("产品名称不能为空")
-        return false
-    }
-    var min_age = $("#age_min").val()
-    var max_age = $("#age_max").val()
-    if (max_age === "") {
-        alert("请填写年龄")
-        return false
-    }
-    if (min_age != "") {
-        a = handle_age(min_age)
-        if (a > 0) {
-            $("#age_min").val(a)
-        }
-    }
-    a = handle_age(max_age)
-    if (a > 0) {
-        $("#age_max").val(a)
-    }
-
-    if ($("#insu_days").val() === "") {
-        alert("保期不能为空")
-        return false
-    }
-    if ($("#clause_limit").val() === "") {
-        alert("条款！！！")
-        return false
-    }
-
-
-})
 
 function setEvents(id, find, func) {
     $(id).find(find).each(function (i, elem) {
@@ -77,7 +29,69 @@ function generate() {
     }
 }
 
-
+$(document).ready(function () {
+    $.validator.addMethod("isRegularAge", function(val){return date_to_num(val) > 0}, "Not Regular Age")
+    $('#insu-form').validate(
+        {   onfocusout:true,
+            debug: true,
+            rules: {
+                proName: {
+                    minlength: 2,
+                    required: true
+                },
+                minAge: {
+                    minlength: 1,
+                    required: true,
+                    isRegularAge: true
+                },
+                maxAge: {
+                    minlength: 1,
+                    required: true,
+                    isRegularAge:true
+                },
+                companyId: {
+                    required: true
+                },
+                categoryId: {
+                    required: true
+                },
+                description: {
+                    required:true
+                },
+                notice:{
+                    required: true
+                },
+                example:{
+                    required: true
+                },
+                suitable:{
+                    required: true
+                },
+                price:{
+                    number:true,
+                    required: true
+                },
+                salesVolume:{
+                    required: true,
+                    min:1
+                },
+                buyCount:{
+                    required: true,
+                    min:0
+                },
+                expire:{
+                    required: true
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            success: function (element) {
+                element.text('OK!').addClass('valid')
+                       .closest('.form-group').removeClass('has-error').addClass('has-success');
+            }
+        });
+}); //
 
 /**
  *转换时间字符到整数
@@ -99,6 +113,9 @@ function date_to_num(arg) {
     if (idx_y > -1 && idx_y == arg.length-1) {
         var num = arg.slice(0, idx_y)
         if (isRegularNum(num)) {
+            if (parseInt(num) > 100){
+                return -1
+            }
             return parseInt(num) * 365
         }
         return -1

@@ -43,6 +43,7 @@ class Application(tornado.web.Application):
             host=options.mysql_host, database=self.database,
             user=options.mysql_user, password=options.mysql_password)
         self.solr_path = options.solr_path
+        self.static_path = settings["static_path"]
 
 #initialize handles
 __import__('apps', globals(), locals(), ["admin_handles"], -1)

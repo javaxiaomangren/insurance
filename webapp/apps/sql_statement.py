@@ -11,8 +11,20 @@ INST_CLAUSE = """INSERT INTO clause(clause_name,description,category_id) VALUES(
 INST_INSU_CLAUSE = """INSERT INTO insu_clause(insu_id,clause_id,limits,insu_days,price,update_time)
 							VALUES(%s, %s, %s, %s, %s, %s)"""
 
+REPLACE_TAGS = """REPLACE INTO tags (tag_name) VALUES(%s)"""
+
 QR_COMPANY = """SELECT id, company_name, logo FROM company """
-QR_CATEGORY = """SELECT id, category_name, description, parent_id FROM category"""
+QR_SIMPLE_COMPANY = """SELECT id, company_name FROM company """
+
+QR_CATEGORY = """SELECT c.* ,c1.category_name as parent_name
+                    FROM category c left join category c1 on c.parent_id = c1.id
+               """
+QR_SIMPLE_CATEGORY = "SELECT id, category_name FROM category"
+
+QR_CLAUSE = """SELECT c.* ,c1.category_name
+                    FROM clause c left join category c1 on c.category_id = c1.id
+               """
+
 QR_TAGS = """SELECT id, tag_name FROM tags """
 QR_IMG = """SELECT id, img_name, img_url, refered_id, type FROM images """
 

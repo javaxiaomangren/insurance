@@ -36,7 +36,7 @@ CREATE TABLE clause (
   -- price_unit VARCHAR(2) COMMENT '价格单位',
   description TEXT COMMENT '条款描述',
   category_id INT(11) NOT NULL  COMMENT '条款分类',
-    PRIMARY KEY (id)
+  PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
 
 CREATE TABLE insurance (
@@ -46,15 +46,17 @@ CREATE TABLE insurance (
   max_age INT(5) NOT NULL COMMENT '最大年龄',
   notice TEXT COMMENT '重要告知',
   description TEXT COMMENT '描述',
+  example TEXT COMMENT '投保样例',
   tags VARCHAR(255) DEFAULT NULL COMMENT '标签',
   suitable VARCHAR(32) COMMENT '适合人群',
   company_id INT(11) NOT NULL COMMENT '保险公司',
   category_id INT(11) NOT NULL COMMENT '保险分类',
-  example VARCHAR(100) COMMENT '样本文件',
+  example_file VARCHAR(100) COMMENT '样本文件',
   price decimal(10,0) COMMENT '保费',
   sales_volume INT(11) NOT NULL DEFAULT 0 COMMENT '销量',
   buy_count SMALLINT(3) NOT NULL DEFAULT 1 COMMENT '可购买份数',
   valid_flag SMALLINT(1) NOT NULL DEFAULT 1 COMMENT '是否有效,1有效',
+  expire DATETIME COMMENT "有效期间",
   create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   update_time DATETIME,
   PRIMARY KEY (id)
