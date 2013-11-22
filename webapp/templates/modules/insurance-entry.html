@@ -1,3 +1,41 @@
-<div>
-    {{ entry.proName }}
+<!-- data list rows-->
+<div class="row">
+    <div class="col-md-7">
+        <div class="media">
+            <a href="#" class="pull-left"><img src="{{ static_url('uploads/'+entry.companyLogo) }}/"></a>
+
+            <div class="media-body">
+                <h4 class="media-head"><a href="#">{{ entry.proName }}</a></h4>
+                <h5>
+                    <small>平安养老 承保年龄：{{ entry.minAge/365 or entry.minAge }} - {{ entry.maxAge }} | 保险期限：{{ entry.insuDays[0] }} | 保额：{{ sorted(entry.limits)[0]}} - {{ sorted(entry.limits)[-1:][0]  }}</small>
+                </h5>
+                <p>{{ entry.description }}</p>
+                <p>
+                    {% for tag in entry.tagName %}
+                        <span class="label label-success">{{ tag }}</span>
+     <!--                <span class="label label-default">高风险运动</span>
+                    <span class="label label-primary">高额第三者责任</span>
+                    <span class="label label-success">高原地区保障</span>
+                    <span class="label label-info">交通高额保障</span> -->
+                    {% end %}
+                </p>
+            </div>
+        </div>
+        <!-- media -->
+    </div>
+    <div class="col-md-3">
+        <ol>
+            {% for clause in entry.clauseName %}
+                <li>{{ clause }}</li>
+            {% end %}
+        </ol>
+    </div>
+    <div class="col-md-2">
+        ￥{{ entry.price }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <hr />
+    </div>
 </div>

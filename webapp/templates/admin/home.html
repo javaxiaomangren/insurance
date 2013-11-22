@@ -191,13 +191,13 @@
                         {% if len(tags) <= 5 %}
                             {% for t in tags %}
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="tagId" type="checkbox" value="{{ t.tag_name }}">{{ t.tag_name }}
+                                <input type="checkbox" name="tags" type="checkbox" value="{{ t.tag_name }}">{{ t.tag_name }}
                             </label>
                             {% end %}
                         {% else %}
                             {% for t in tags[0:5] %}
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="tagId" type="checkbox" value="{{ t.tag_name }}">{{ t.tag_name }}
+                                    <input type="checkbox" name="tags" type="checkbox" value="{{ t.tag_name }}">{{ t.tag_name }}
                                 </label>
                             {% end %}
                             <label class="checkbox-inline">
@@ -212,7 +212,7 @@
                             {% if len(tags) > 5 %}
                                 {% for t in tags[5:] %}
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="tagId" type="checkbox" value="{{ t.tag_name }}">{{ t.tag_name }}
+                                    <input type="checkbox" name="tags" type="checkbox" value="{{ t.tag_name }}">{{ t.tag_name }}
                                 </label>
                                 {% end %}
                             {% end %}

@@ -100,7 +100,7 @@
             <input name="insuDays" type="radio" value="365"/>1年以上
         </label>
         <lable class="radio-inline">
-             <input name="insuDays" type="radio" value="" checked="checked"/>不限
+            <input name="insuDays" type="radio" value="" checked="checked"/>不限
         </lable>
 
     </td>
@@ -337,7 +337,8 @@
         <div class="col-lg-6 input-group ">
             <input type="text" class="form-control" name="proName">
                               <span class="input-group-btn">
-                                <button id="searchBtn" class="btn btn-primary" type="button" onclick="search()">搜&nbsp;&nbsp;索</button>
+                                <input type="submit" id="searchBtn" class="btn btn-primary" type="button"
+                                       value="搜&nbsp;&nbsp;索"/>
                               </span>
         </div>
         <!-- /input-group -->
@@ -360,77 +361,47 @@
 <!-- panle-body -->
 </div>
 <!--search panel -->
+<div id="result">
 
-<div class="alert alert-warning" style="padding:2px 20px">
-    <div class="row">
-        <div class="col-md-3 col-xs-1" style="margin-top:6px">
-            <strong><span> 共查到{{ len(entries) }}条</span></strong>
-        </div>
-        <div class="col-md-6"></div>
-        <div class="col-md-3">
-            <input type="button" class="btn btn-primary active" value="价格"/>&nbsp;&nbsp;
-            <input type="button" class="btn btn-default" value="保额"/>
-        </div>
-    </div>
-</div>
-{% for entry in entries %}
-<!-- data list rows-->
-<div class="row">
-    <div class="col-md-7">
-        <div class="media">
-            <a href="#" class="pull-left"><img src="{{ static_url('uploads/'+entry.companyLogo) }}/"></a>
-
-            <div class="media-body">
-                <h4 class="media-head"><a href="#">{{ entry.proName }}</a></h4>
-                <h5>
-                    <small>平安养老 承保年龄：{{ entry.minAge/365 or entry.minAge }} - {{ entry.maxAge }} | 保险期限：{{ entry.insuDays[0] }} | 保额：{{ sorted(entry.limits)[0]}} - {{ sorted(entry.limits)[-1:][0]  }}</small>
-                </h5>
-                <p>{{ entry.description }}</p>
-                <p>
-                    {% for tag in entry.tagName %}
-                        <span class="label label-success">{{ tag }}</span>
-     <!--                <span class="label label-default">高风险运动</span>
-                    <span class="label label-primary">高额第三者责任</span>
-                    <span class="label label-success">高原地区保障</span>
-                    <span class="label label-info">交通高额保障</span> -->
-                    {% end %}
-                </p>
+    <div class="alert alert-warning" style="padding:2px 20px">
+        <div class="row">
+            <div class="col-md-3 col-xs-1" style="margin-top:6px">
+                <strong><span> 共查到{{ len(entries) }}条</span></strong>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                <input type="button" class="btn btn-primary active" value="价格"/>&nbsp;&nbsp;
+                <input type="button" class="btn btn-default" value="保额"/>
             </div>
         </div>
-        <!-- media -->
     </div>
-    <div class="col-md-3">
-        <ol>
-            {% for clause in entry.clauseName %}
-                <li>{{ clause }}</li>
-            {% end %}
-        </ol>
+    {% for entry in entries %}
+    {% module InsuranceEntry(entry) %}
+    {% end %}
+    <!-- data list div row-->
+    <div class="pager-location">
+        <ul class="pagination">
+            <li><a href="#">上一页</a></li>
+            <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li class="disabled"><a href="javascript:void(0)">...</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">下一页</a></li>
+        </ul>
     </div>
-    <div class="col-md-2">
-        ￥{{ entry.price }}
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <hr />
-    </div>
-</div>
-{% end %}
-<!-- data list div row-->
-<div class="pager-location">
-    <ul class="pagination">
-        <li><a href="#">上一页</a></li>
-        <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li class="disabled"><a href="javascript:void(0)">...</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">下一页</a></li>
-    </ul>
-</div>
 
 </div>
+</div>
+
 <!-- container -->
 {% end %}
+
+{% block extra_js %}
+<script type="text/javascript">
+
+
+</script>
+{% end%}

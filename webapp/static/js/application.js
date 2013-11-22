@@ -1,11 +1,21 @@
 var template = "<span id=\"{0}\" class=\"label {1} _tag\" >{2}&nbsp<a href=\"#\" data-toggle=\"tooltip\" title=\"删除条件\" class=\"close-tag\" onclick=\"closeIt('{3}', '{4}')\">&times</a></span>"
 /*global map*/
 var tagsMap = new Map()
-$(document ).ready(print_tags(tagsMap))
 
+$(document).ready(function () {
+    $("#searchForm").on("submit", function () {
+        search($(this));
+        return false;
+    });
+    $("#searchForm input").click(function() {
+        search($(this))
+    })
+
+});
 _setEvent("companyId",  "comp_{0}", template, "label-warning")
 _setEvent("tagId", "tags_{0}", template, "label-info")
 _setEvent("clauseName", "clause_{0}", template, "label-danger")
+
 
 function _setEvent(name, keyPlate, template, css) {
     var ckBox = $("[name="+name+"][type=checkbox]")
@@ -19,6 +29,7 @@ function _setEvent(name, keyPlate, template, css) {
             }
         })
         print_tags(tagsMap)
+        search($("#searchForm"))
     })
 
     /**设置复选框事件*/
@@ -40,6 +51,7 @@ function _setEvent(name, keyPlate, template, css) {
                 tagsMap.put(key, label)
             }
             print_tags(tagsMap)
+            search($("#searchForm"))
         })
     })
 }
@@ -60,6 +72,13 @@ function print_tags(map) {
     })
 }
 
+
+function search(form) {
+    var message = form.serializeArray()
+    $.postJSON("/", message, function (response) {
+        $("#result").empty().append(response)
+    });
+}
 /**
  * string format:
  * useage:
@@ -93,9 +112,6 @@ String.prototype.format = function (args) {
     }
 }
 
-function search(){
-    $("#searchForm").submit()
-}
 
 /**
  * 自定义key-value Map
@@ -198,3 +214,23 @@ function to_date_str(year) {
         }
     }
 }
+
+jQuery.postJSON = function(url, args, callback) {
+//    args._xsrf = getCookie("_xsrf");
+    $.ajax({url: url, data: $.param(args), dataType: "text", type: "POST",
+            success: function(response) {
+            if (callback) callback(response)
+    }, error: function(response) {
+        console.log("ERROR:", response)
+    }});
+};
+
+jQuery.fn.formToDict = function() {
+    var fields = this.serializeArray();
+    var json = {}
+    for (var i = 0; i < fields.length; i++) {
+        json[fields[i].name] = fields[i].value;
+    }
+    if (json.next) delete json.next;
+    return json;
+};

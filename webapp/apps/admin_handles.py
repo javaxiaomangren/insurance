@@ -56,6 +56,9 @@ class AdminHandler(BaseHandler):
 
 @route(r"/admin/insurance/(.*)$", name="insurance")
 class InsuranceHandler(BaseHandler):
+    """
+        产品信息维护
+    """
     def get(self, action):
         if not action:
             category = self.db.query(sqls.QR_SIMPLE_CATEGORY)
@@ -87,13 +90,14 @@ def get_insurance_args(args):
     description = args("description", u'')
     tags = args("tags", u'')
     suitable = args("suitable", u'')
-    company_id = args("company_id")
-    category_id = args("category_id")
+    company_id = args("companyId")
+    category_id = args("categoryId")
     example = args("example", u'')
     price = args("price", 0)
-    sales_volume = args("sales_volume", 0)
-    buy_count = args("buy_count", 1)
-    update_time = args("update_time", datetime.datetime.now())
+    sales_volume = args("salesVolume", 0)
+    buy_count = args("buyCount", 1)
+    expire = args("expire")
+    update_time = args("updateTime", datetime.datetime.now())
 
     if not (nice_bool(pro_name) and nice_bool(company_id) and nice_bool(category_id)):
         raise tornado.web.HTTPError(500)
