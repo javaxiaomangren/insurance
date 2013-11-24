@@ -29,69 +29,67 @@ function generate() {
     }
 }
 
-$(document).ready(function () {
-    $.validator.addMethod("isRegularAge", function(val){return date_to_num(val) > 0}, "Not Regular Age")
-    $('#insu-form').validate(
-        {   onfocusout:true,
-            debug: true,
-            rules: {
-                proName: {
-                    minlength: 2,
-                    required: true
-                },
-                minAge: {
-                    minlength: 1,
-                    required: true,
-                    isRegularAge: true
-                },
-                maxAge: {
-                    minlength: 1,
-                    required: true,
-                    isRegularAge:true
-                },
-                companyId: {
-                    required: true
-                },
-                categoryId: {
-                    required: true
-                },
-                description: {
-                    required:true
-                },
-                notice:{
-                    required: true
-                },
-                example:{
-                    required: true
-                },
-                suitable:{
-                    required: true
-                },
-                price:{
-                    number:true,
-                    required: true
-                },
-                salesVolume:{
-                    required: true,
-                    min:1
-                },
-                buyCount:{
-                    required: true,
-                    min:0
-                },
-                expire:{
-                    required: true
-                }
-            },
-            highlight: function (element) {
-                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-            },
-            success: function (element) {
-                element.text('OK!').addClass('valid')
-                       .closest('.form-group').removeClass('has-error').addClass('has-success');
-            }
-        });
-}); //
+// $(document).ready(function () {
+//     $.validator.addMethod("isRegularAge", function(val){return date_to_num(val) > 0}, "Not Regular Age")
+//     $('#insu-form').validate(
+//         {   onfocusout:true,
+//             debug: true,
+//             rules: {
+//                 proName: {
+//                     minlength: 2,
+//                     required: true
+//                 },
+//                 minAge: {
+//                     minlength: 1,
+//                     required: true,
+//                     isRegularAge: true
+//                 },
+//                 maxAge: {
+//                     minlength: 1,
+//                     required: true,
+//                     isRegularAge:true
+//                 },
+//                 companyId: {
+//                     required: true
+//                 },
+//                 categoryId: {
+//                     required: true
+//                 },
+//                 description: {
+//                     required:true
+//                 },
+//                 notice:{
+//                     required: true
+//                 },
+//                 example:{
+//                     required: true
+//                 },
+//                 suitable:{
+//                     required: true
+//                 },
+//                 price:{
+//                     number:true,
+//                     required: true
+//                 },
+//                 salesVolume:{
+//                     required: true,
+//                     min:1
+//                 },
+//                 buyCount:{
+//                     required: true,
+//                     min:0
+//                 },
+                
+//             },
+//             highlight: function (element) {
+//                 $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+//             },
+//             success: function (element) {
+//                 element.text('OK!').addClass('valid')
+//                        .closest('.form-group').removeClass('has-error').addClass('has-success');
+//             }
+//         });
+// }); //
 
 /**
  *转换时间字符到整数

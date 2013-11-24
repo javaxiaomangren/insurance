@@ -15,10 +15,10 @@
             </div>
 
             <div class="form-inline">
-                <label for="companyId" class="col-sm-1 control-label">保险公司:</label>
+                <label for="companyId" class="col-sm-2 control-label">保险公司:</label>
 
                 <div class="col-sm-2">
-                    <select name="categoryId" id="companyId" class="form-control" placehodler="选择保险公司">
+                    <select name="companyId" id="companyId" class="form-control" placehodler="选择保险公司">
                         <option value=""></option>
                         {% for entry in companies %}
                             <option value="{{ entry.id }}">{{ entry.company_name}}</option>
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <div class="form-inline">
-                <label for="categoryId" class="col-sm-2 control-label">保险公司:</label>
+                <label for="categoryId" class="col-sm-2 control-label">保险分类:</label>
 
                 <div class="col-sm-2">
                     <select name="categoryId" id="categoryId" class="form-control" placehodler="选择所属分类">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="form-inline">
-                <label for="notice" class="col-sm-1 control-label">重要告知:</label>
+                <label for="notice" class="col-sm-2 control-label">重要告知:</label>
 
                 <div class="col-sm-2">
                     <textarea class="form-control" rows="1" id="notice" name="notice" placeholder="重要告知"></textarea>
@@ -56,7 +56,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" id="minAge" name="minAge" placeholder="最小年龄"/>
 
-                    <div class="input-group-btn">
+                    <!-- <div class="input-group-btn">
                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                             天<span class="caret"></span>
                         </button>
@@ -79,14 +79,15 @@
                             <li><a href="#">70岁</a></li>
                             <li><a href="#">80岁</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-sm-2">
                 <div class="input-group">
+
                     <input type="text" class="form-control" id="maxAge" name="maxAge" placeholder="最大年龄"/>
                     <!-- <span class="input-group-addon">天</span> -->
-                    <div class="input-group-btn">
+ <!--                    <div class="input-group-btn">
                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                             天<span class="caret"></span>
                         </button>
@@ -109,7 +110,7 @@
                             <li><a href="#">70岁</a></li>
                             <li><a href="#">80岁</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -124,7 +125,7 @@
             <!-- description -->
 
             <div class="form-inline">
-                <label for="example" class="col-sm-1 control-label">投保案例:</label>
+                <label for="example" class="col-sm-2 control-label">投保案例:</label>
 
                 <div class="col-sm-2">
                     <textarea class="form-control" rows="2" id="example" name="example" placeholder="投保案例"></textarea>
@@ -142,7 +143,7 @@
             </div>
             <!--固定产品价格-->
             <div class="form-inline">
-                <label for="salesVolume" class="col-sm-1 control-label">销量:</label>
+                <label for="salesVolume" class="col-sm-2 control-label">销量:</label>
 
                 <div class="col-sm-2">
                     <input type="number" class="form-control" id="salesVolume" name="salesVolume" placeholder="销量">
@@ -158,7 +159,7 @@
                 </div>
             </div>
             <div class="form-inline">
-                <label for="expire" class="col-sm-1 control-label">过期时间:</label>
+                <label for="expire" class="col-sm-2 control-label">过期时间:</label>
 
                 <div class="col-sm-2">
                     <input type="date" class="form-control" id="expire" name="expire" placeholder="过期时间">
@@ -175,7 +176,7 @@
             </div>
             <!-- 适合人群 -->
             <div class="form-inline">
-                <label for="imgs" class="col-sm-1 control-label">图片:</label>
+                <label for="imgs" class="col-sm-2 control-label">图片:</label>
 
                 <div class="col-sm-2">
                     <input type="file" class="form-control" id="imgs" name="imgs" placeholder="过期时间">

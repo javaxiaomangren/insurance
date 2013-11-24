@@ -3,12 +3,13 @@ INST_COMPANY = """INSERT INTO company(company_name, logo) VALUES(%s, %s)"""
 INST_CATEGORY = """INSERT INTO category(category_name, description, parent_id) VALUES(%s, %s, %s)"""
 INST_TAGS = """INSERT INTO tags (tag_name) VALUES(%s)"""
 INST_IMAGE = """INSERT INTO images(img_name, img_url, refered_id, type) VALUES(%s, %s, %s, %s);"""
-INST_INSURANCE = """INSERT INTO insurance(pro_name,min_age,max_age,notice,description,tags,suitable,
-								company_id,category_id,example,price,sales_volume,buy_count, update_time)
-						VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+INST_INSURANCE = """INSERT INTO insurance(pro_name,company_id,category_id,notice,min_age,max_age,
+								description,example,price,sales_volume,buy_count,
+								suitable,tags)
+						VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
 
 INST_CLAUSE = """INSERT INTO clause(clause_name,description,category_id) VALUES(%s, %s, %s)"""
-INST_INSU_CLAUSE = """INSERT INTO insu_clause(insu_id,clause_id,limits,insu_days,price,update_time)
+INST_INSU_CLAUSE = """INSERT INTO insu_clause(insu_id,clause_id,limits,insu_d,ays,price,update_time)
 							VALUES(%s, %s, %s, %s, %s, %s)"""
 
 REPLACE_TAGS = """REPLACE INTO tags (tag_name) VALUES(%s)"""

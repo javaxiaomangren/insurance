@@ -2,6 +2,7 @@
 import datetime
 import time
 import uuid
+from collections import namedtuple
 import tornado.web
 from tornado.log import gen_log
 
@@ -53,6 +54,10 @@ class AdminHandler(BaseHandler):
     def get(self):
         self.redirect("/admin/insurance/")
 
+Insurance = namedtuple("Insurance", 
+    "id pro_name company_id category_id notice min_age max_age\
+     description example price sales_volume buy_count \
+     suitable tags")
 
 @route(r"/admin/insurance/(.*)$", name="insurance")
 class InsuranceHandler(BaseHandler):
@@ -66,44 +71,24 @@ class InsuranceHandler(BaseHandler):
             tags = self.db.query(sqls.QR_TAGS)
             self.render("admin/home.html", categories=category, companies=company, tags=tags)
         if "list" == action:
-            entries = self.db.execute("SELECT * FROM insurance")
+            entries = self.db.query("SELECT * FROM insurance")
             self.render("admin/list_insurance.html", entries=entries)
         raise tornado.web.HTTPError(404)
 
     #should be aysnc
     def post(self, action):
         args = self.get_argument
-        id = args("id")
+        insu = Insurance(args("id", None), args("proName"), args("companyId"), 
+                args("categoryId"), args("notice", u''), args("minAge", 1), 
+                args("maxAge", 0), args("description", u''), args("example", u''), 
+                args("price", 0), args("salesVolume", 0), args("buyCount", 1),
+                args("suitable", u''), args("tags", u''))
         if id:
             #do update
             pass
 
-        self.db.execute(sqls.INST_INSURANCE, *get_insurance_args(args))
+        self.db.execute(sqls.INST_INSURANCE, *[p for p in insu[1:]])
         self.render("list")
-
-
-def get_insurance_args(args):
-    pro_name = args("proName")
-    min_age = args("minAge", 1)
-    max_age = args("maxAge", min_age)
-    notice = args("notice", u'')
-    description = args("description", u'')
-    tags = args("tags", u'')
-    suitable = args("suitable", u'')
-    company_id = args("companyId")
-    category_id = args("categoryId")
-    example = args("example", u'')
-    price = args("price", 0)
-    sales_volume = args("salesVolume", 0)
-    buy_count = args("buyCount", 1)
-    expire = args("expire")
-    update_time = args("updateTime", datetime.datetime.now())
-
-    if not (nice_bool(pro_name) and nice_bool(company_id) and nice_bool(category_id)):
-        raise tornado.web.HTTPError(500)
-    return pro_name, min_age, max_age, notice, description, \
-        tags, suitable, company_id, category_id, example, \
-        price, sales_volume, buy_count, update_time
 
 
 @route(r"/admin/clause/(.*)$", name="clause")
