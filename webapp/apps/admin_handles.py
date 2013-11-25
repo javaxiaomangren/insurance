@@ -75,20 +75,20 @@ class InsuranceHandler(BaseHandler):
             self.render("admin/list_insurance.html", entries=entries)
         raise tornado.web.HTTPError(404)
 
-    #should be aysnc
     def post(self, action):
         args = self.get_argument
-        insu = Insurance(args("id", None), args("proName"), args("companyId"), 
-                args("categoryId"), args("notice", u''), args("minAge", 1), 
-                args("maxAge", 0), args("description", u''), args("example", u''), 
-                args("price", 0), args("salesVolume", 0), args("buyCount", 1),
-                args("suitable", u''), args("tags", u''))
+        id = args("id", None)
+        expire = args("expire", "2200-01-01 00:00:00")
+
         if id:
             #do update
             pass
-
-        self.db.execute(sqls.INST_INSURANCE, *[p for p in insu[1:]])
-        self.render("list")
+        self.db.execute(sqls.INST_INSURANCE,
+                        args("proName"), args("companyId"), args("categoryId"), args("notice", u''),
+                        args("minAge", 1), args("maxAge", 0), args("description", u''), args("example", u''),
+                        args("price", 0), args("salesVolume", 0), args("buyCount", 1), args("suitable", u''),
+                        ",".join(args("tags", u'')), expire)
+        self.redirect("list")
 
 
 @route(r"/admin/clause/(.*)$", name="clause")
@@ -305,6 +305,23 @@ class ImageHandle(BaseHandler):
             raise tornado.web.HTTPError(500)
         lastid = self.db.execute(sqls.INST_IMAGE, img_name, img_url, refered_id, type)
         self.write(str(lastid))
+
+
+@route("/admin/upload", name="upload")
+class UploadHandle(BaseHandler):
+
+    def get(self):
+        self.render("admin/upload.html")
+
+    def post(self):
+        fileName = saveFile(self.request.files, "fileName", "static/uploads/")
+        img = """<div class="col-sm-6 col-md-3">
+                    <a href="#" class="thumbnail">
+                      <img data-src="{{ static_url('uploads/%s')}}" />
+                    </a>
+                </div>""" % fileName
+        # self.write({"result": img})
+        self.write(fileName)
 
 
 def saveFile(files, key, path):
