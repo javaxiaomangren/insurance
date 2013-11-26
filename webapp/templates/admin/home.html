@@ -208,20 +208,24 @@
         </div>
         <!-- tags -->
         <div class="form-group">
-            <div class="col-md-12" id="file-container">
-                  <span class="btn btn-success fileinput-button">
-                    <i class="glyphicon glyphicon-plus"></i>
+             <div class="form-inline">
+                <label for="fileupload" class="col-sm-2 control-label">上传图片:</label>
+
+                <div class="col-sm-4">
+                     <span class="btn btn-success fileinput-button">
+                        <i class="glyphicon glyphicon-plus"></i>
                     <span>Add files...</span>
-                    <!-- The file input field used as target for the file upload widget -->
-                    <input id="fileupload" type="file" name="fileName" multiple>
+                        <input id="fileupload" type="file" name="uploadName" multiple>
                     </span>
-                <br>
-                <!-- The container for the uploaded files -->
-                <div id="files">
-               </div>
+                    <span class="label label-danger" id="fileupload-tip"></span>
+                </div>
             </div>
          </div>
-
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6" id="list-upload">
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-sm-3">&nbsp;</div>
             <div class="col-sm-3">
@@ -239,23 +243,35 @@
 <script src="{{ static_url('js/jquery.iframe-transport.js') }}"></script>
 <script src="{{ static_url('js/jquery.fileupload.js') }}"></script>
 <script type="text/javascript">
-    $(function () {
+
+$(function () {
     $('#fileupload').fileupload({
 //        dataType: 'json',
+        url: "/admin/upload",
         add: function (e, data) {
+            if (!isImage(data.files[0].name)) {
+                $("#fileupload-tip").html("Not regular image type")
+                return
+            }
+            if (data.files[0].size > 100000){  //max 1MB
+                $("#fileupload-tip").html("file too large max size=1MB")
+                return
+            }
             data.context = $('<button/>').addClass('btn btn-primary').text('Upload')
-                .appendTo($(".file-container"))
-
+                .appendTo($("#list-upload"))
                 .click(function () {
                     data.context = $('<p/>').text('Uploading...').replaceAll($(this));
                     data.submit()
                         .success(function (result, textStatus, jqXHR) {
                                 var src = "{{ static_url('uploads/') }}"+result
-                                $("#files").append("<div class='col-sm-3 col-md-3'>" +
-                                        "<a href='#' class='thumbnail' >" +
-                                        "<img src="+src+" alt="+result+" />"+
-                                "</a>"+
-                                "</div>")
+                                $("#list-upload").append(
+                                        "<div class='col-sm-3 col-md-3' id="+result.replace('.', '_')+">" +
+                                        "<a href='javascript:void(0)' class='thumbnail' onclick=delImage('"+result+"') >" +
+                                        "<img src="+src+" alt="+result+" width='172' height='180'/>"+
+                                "</a></div>")
+                                $("<input/>").prop({"type":"hidden", "name":"fileNames"})
+                                            .val(result)
+                                            .appendTo("#insu-form")
                                 data.context.text('');
                         })
 //                        .error(function (jqXHR, textStatus, errorThrown) {/* ... */})
@@ -264,5 +280,16 @@
         }
     })
 });
+function delImage(name) {
+    if (window.confirm("删除这张图吗？")){
+        $.ajax({url: "/admin/upload/del", data:"fileName=" + name, type: "GET",
+                success: function(response) {
+                $("#"+name.replace('.', '_')).remove()
+        }, error: function(response) {
+            console.log("ERROR:", response)
+        }});
+    }
+}
+
 </script>
 {% end %}

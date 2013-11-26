@@ -2,6 +2,7 @@
 import datetime
 import time
 import uuid
+import os
 from collections import namedtuple
 import tornado.web
 from tornado.log import gen_log
@@ -314,14 +315,16 @@ class UploadHandle(BaseHandler):
         self.render("admin/upload.html")
 
     def post(self):
-        fileName = saveFile(self.request.files, "fileName", "static/uploads/")
-        img = """<div class="col-sm-6 col-md-3">
-                    <a href="#" class="thumbnail">
-                      <img data-src="{{ static_url('uploads/%s')}}" />
-                    </a>
-                </div>""" % fileName
-        # self.write({"result": img})
+        fileName = saveFile(self.request.files, "uploadName", "static/uploads/")
         self.write(fileName)
+
+@route("/admin/upload/del", name="del_file")
+class DelHandle(BaseHandler):
+
+    def get(self):
+        file_name = self.get_argument("fileName")
+        del_file(file_name, "static/uploads/")
+        self.write(file_name)
 
 
 def saveFile(files, key, path):
@@ -334,3 +337,9 @@ def saveFile(files, key, path):
     with open(path + fileName, "w") as f:
         f.write(body)
     return fileName
+
+
+def del_file(file_name, path):
+    vpath = os.path.abspath(path + file_name)
+    if os.path.isfile(vpath):
+        os.remove(vpath)

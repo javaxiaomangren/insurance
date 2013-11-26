@@ -30,7 +30,7 @@ function generate() {
 }
 
 $(document).ready(function () {
-     $.validator.addMethod("isRegularAge", function(val){return date_to_num(val) > 0}, "Not Regular Age")
+//     $.validator.addMethod("isRegularAge", function(val){return date_to_num(val) > 0}, "Not Regular Age")
      $('#insu-form').validate(
          {   onfocusout:true,
 //             debug: true,
@@ -41,13 +41,13 @@ $(document).ready(function () {
                  },
                  minAge: {
                      minlength: 1,
-                     required: true,
-                     isRegularAge: true
+                     required: true
+//                     isRegularAge: true
                  },
                  maxAge: {
                      minlength: 1,
-                     required: true,
-                     isRegularAge:true
+                     required: true
+//                     isRegularAge:true
                  },
                  companyId: {
                      required: true
@@ -165,6 +165,13 @@ function str_to_num(str){
 function isRegularNum(num) {
     var reg = new RegExp("^[0-9]*$");
     if (reg.test(num) && parseInt(num) > 0) {
+        return true
+    }
+    return false
+}
+function isImage(name) {
+//    var reg = new RegExp("/(\\.|\/)(gif|jpe?g|png)$/i");
+    if (/(\.|\/)(gif|jpe?g|png)$/i.test(name)) {
         return true
     }
     return false
