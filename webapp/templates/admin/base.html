@@ -1,109 +1,109 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    {% block title %}
-    <title>{{ escape(handler.settings["site_title"]) }}</title>
-    {% end %}
-    {% block extra_head %}
-    {% end %}
-    <!-- Bootstrap core CSS -->
-    <link href="{{ static_url('css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{{ static_url('css/customer.css') }}" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  {% block title %}
+  <title>{{ escape(handler.settings["site_title"]) }}</title>
+  {% end %}
+  {% block extra_head %}
+  {% end %}
+  <!-- Bootstrap core CSS -->
+  <link href="{{ static_url('css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{ static_url('css/customer.css') }}" rel="stylesheet">
+  <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
 </head>
 
 <body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
-    <a class="navbar-brand" href="#">Insurance Product Manager</a>
+  <a class="navbar-brand" href="#">Insurance Product Manager</a>
 </div>
 <!-- header -->
 
 <div class="page-body">
-    <div class="row">
-        <div class="col-md-2">
-            {% block left %}
-            <div class="panel panel-default">
-                <!--<div class="panel-heading">Welcome</div>-->
-                <div class="panel-body panel-left" >
-                    <ul class="nav">
-                        <li>
-                            <a href="/admin">Welcome</a>
-                        </li>
-                        <li>
-                            保险公司
-                            <ul>
-                                <li><a href="/admin/company/list">列表</a></li>
-                                <li><a href="/admin/company/">添加</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                           保险分类
-                            <ul>
-                                <li><a href="/admin/category/list">列表</a></li>
-                                <li><a href="/admin/category/">添加</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            标签
-                            <ul>
-                                <li><a href="/admin/tags/list">列表</a></li>
-                                <li><a href="/admin/tags/">添加</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            产品
-                            <ul>
-                                <li><a href="/admin/insurance/list">列表</a></li>
-                                <li><a href="/admin/insurance/">添加</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            条款
-                            <ul>
-                                <li><a href="/admin/clause/list">列表</a></li>
-                                <li><a href="/admin/clause/">添加</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">用户</a></li>
-                        <li><a href="">添加条款</a></li>
-                        <li><a href="">退出</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            {% end %}
+  <div class="row">
+    <div class="col-md-2">
+      {% block left %}
+      <div class="panel panel-default">
+        <!--<div class="panel-heading">Welcome</div>-->
+        <div class="panel-body panel-left">
+          <ul class="nav .bs-sidenav">
+            <li>
+              <a href="/admin">Welcome</a>
+            </li>
+            <li>
+              保险公司
+              <a href="/admin/company/list">列表</a>
+              <a href="/admin/company/">添加</a>
+            </li>
+            <li>
+              保险分类
+              <ul class="nav">
+                <li><a href="/admin/category/list">列表</a></li>
+                <li><a href="/admin/category/">添加</a></li>
+              </ul>
+            </li>
+            <li>
+              标签
+              <ul class="nav">
+                <li><a href="/admin/tags/list">列表</a></li>
+                <li><a href="/admin/tags/">添加</a></li>
+              </ul>
+            </li>
+            <li>
+              产品
+              <ul class="nav">
+                <li><a href="/admin/insurance/list">列表</a></li>
+                <li><a href="/admin/insurance/">添加</a></li>
+              </ul>
+            </li>
+            <li>
+              条款
+              <ul class="nav">
+                <li><a href="/admin/clause/list">列表</a></li>
+                <li><a href="/admin/clause/">添加</a></li>
+              </ul>
+            </li>
+            <li><a href="">用户</a></li>
+            <li><a href="">添加条款</a></li>
+            <li><a href="">退出</a></li>
+          </ul>
         </div>
-        <!-- left -->
 
-        <div class="col-xl-12 col-md-10">
-            <div class="panel">
-                <div class="panel-heading">
-                    {% block location_title %}
-                    <h4> Welcome</h4> <hr />
-                    {% end %}
-                </div>
-                <div class="panel-body">
-                    {% block main %}
-
-                    {% end %}
-                </div>
-            </div>
-        </div>
-        <!-- right main content body-->
+      </div>
+      {% end %}
     </div>
-    <!-- row -->
+    <!-- left -->
+
+    <div class="col-xl-12 col-md-10">
+      <div class="panel">
+        <div class="panel-heading">
+          {% block location_title %}
+          <h4> Welcome</h4>
+          <hr/>
+          {% end %}
+        </div>
+        <div class="panel-body">
+          {% block main %}
+
+          {% end %}
+        </div>
+      </div>
+    </div>
+    <!-- right main content body-->
+  </div>
+  <!-- row -->
 </div>
 <!-- page-body -->
 

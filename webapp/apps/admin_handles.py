@@ -3,6 +3,9 @@ import datetime
 import time
 import uuid
 import os
+import httplib
+import traceback
+
 from collections import namedtuple
 import tornado.web
 from tornado.log import gen_log
@@ -18,6 +21,19 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def get_current_user(self):
         pass
+
+    def get_error_html(self, status_code, **kwargs):
+
+        try:
+            template = "admin/404.html"
+            message = httplib.responses[status_code]
+            exception = "%s\n\n%s" % (kwargs["exception"], traceback.format_exc())
+            return self.render_string(template,
+                                      code=status_code,
+                                      message=message,
+                                      exception=exception)
+        except Exception:
+            return self.write("Server error")
 
     def initialize(self):
         print "please define your initialize..............."
@@ -55,10 +71,10 @@ class AdminHandler(BaseHandler):
     def get(self):
         self.redirect("/admin/insurance/")
 
-Insurance = namedtuple("Insurance", 
-    "id pro_name company_id category_id notice min_age max_age\
-     description example price sales_volume buy_count \
-     suitable tags")
+Insurance = namedtuple("Insurance",
+                       "id pro_name company_id category_id notice min_age max_age"
+                       "description example price sales_volume buy_count suitable tags")
+
 
 @route(r"/admin/insurance/(.*)$", name="insurance")
 class InsuranceHandler(BaseHandler):
@@ -74,14 +90,14 @@ class InsuranceHandler(BaseHandler):
         if "list" == action:
             entries = self.db.query("SELECT * FROM insurance")
             self.render("admin/list_insurance.html", entries=entries)
-        raise tornado.web.HTTPError(404)
+        raise tornado.web.HTTPError(400)
 
     def post(self, action):
         args = self.get_argument
-        id = args("id", None)
+        _id = args("id", None)
         expire = args("expire", "2200-01-01 00:00:00")
 
-        if id:
+        if _id:
             #do update
             pass
         self.db.execute(sqls.INST_INSURANCE,
@@ -107,13 +123,13 @@ class ClauseHandle(BaseHandler):
 
     def post(self, action):
         args = self.get_argument
-        id = args("clauseId", None)
+        _id = args("clauseId", None)
         name = args("clauseName")
         desc = args("description", u'')
         cate_id = args("categoryId")
         if len(name) < 2 or len(desc) < 2:
             raise tornado.web.HTTPError(500)
-        if id:
+        if _id:
             #do update
             pass
         self.db.execute(sqls.INST_CLAUSE, name, desc, cate_id)
@@ -166,14 +182,14 @@ class CompanyHandle(BaseHandler):
             entries = self.db.query(sqls.QR_COMPANY)
             self.render("admin/select-company.html", entries=entries)
         else:
-            raise tornado.web.HTTPError(404)
+            raise tornado.web.HTTPError(400)
 
     def post(self, action):
         """TODO:but it's not recommend, because all upload date is load on RAM,
          the best way is use nginx loadup module, but thses complex
         """
         if not "save" == action:
-            raise tornado.web.HTTPError(404)
+            raise tornado.web.HTTPError(400)
         name = self.get_argument("companyName", u'')
         if len(name) < 2:
             raise tornado.web.HTTPError(500, "company name can not be null")
@@ -203,7 +219,7 @@ class EditCompany(BaseHandler):
             self.redirect("/admin/company/list")
         if "edit" == action:
             self.render("admin/edit_company.html", entry=company)
-        raise tornado.web.HTTPError(404)
+        raise tornado.web.HTTPError(400)
 
 
 @route(r"/admin/category/(.*)$", name="category")
@@ -220,7 +236,7 @@ class CategoryHandle(BaseHandler):
         elif "forSelect" == action:
             category = self.db.query(sqls.QR_CATEGORY)
             self.render("admin/select_category.html", category)
-        raise tornado.web.HTTPError(404)
+        raise tornado.web.HTTPError(400)
 
     def post(self, action):
         id = self.get_argument("categoryId", None)
@@ -262,7 +278,7 @@ class TagsHandle(BaseHandler):
         elif "forSelect" == action:
             tags = self.db.query(sqls.QR_CATEGORY)
             self.render("admin/select_tags.html", entries=tags)
-        raise tornado.web.HTTPError(404)
+        raise tornado.web.HTTPError(400)
 
     def post(self, action):
         id = self.get_argument("tagsId", None)
@@ -322,7 +338,9 @@ class UploadHandle(BaseHandler):
 class DelHandle(BaseHandler):
 
     def get(self):
-        file_name = self.get_argument("fileName")
+        file_name = self.get_argument("fileName", None)
+        if not file_name:
+            raise tornado.web.HTTPError(400)
         del_file(file_name, "static/uploads/")
         self.write(file_name)
 
