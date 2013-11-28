@@ -91,7 +91,7 @@ class InsuranceHandler(BaseHandler):
             entries = self.db.query("SELECT i.*, c.company_name, ct.category_name "
                                     " FROM insurance i ,company c ,category ct"
                                     " where c.id = i.company_id "
-                                    " and ct.id = i.company_id and i.valid_flag=1"
+                                    " and ct.id = i.category_id and i.valid_flag=1"
                                     )
             self.render("admin/list_insurance.html", entries=entries)
         raise tornado.web.HTTPError(400)
