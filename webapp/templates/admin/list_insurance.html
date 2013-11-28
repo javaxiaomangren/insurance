@@ -5,27 +5,47 @@
 {% block main %}
 <div id="Main">
   <table class="table table-hover">
-    <colgroup>
-      <col class="col-xs-1">
-      <col class="col-xs-1">
-      <col class="col-xs-1">
-      <col class="col-xs-9">
-    </colgroup>
+    <!--<colgroup>-->
+      <!--<col class="col-xs-1">-->
+      <!--<col class="col-xs-1">-->
+      <!--<col class="col-xs-1">-->
+      <!--<col class="col-xs-9">-->
+    <!--</colgroup>-->
     <tbody>
     <thead>
     <tr>
       <th>#</th>
       <th>名称</th>
+      <th>年龄段</th>
+      <th>保险公司</th>
+      <th>保险分类</th>
+      <th>描述</th>
+      <th>重要告知</th>
+      <th>适合人群</th>
+      <th>投保样例</th>
+      <th>标签</th>
+      <th>价格</th>
+      <th>销量</th>
+      <th>可购买</th>
       <th>操作</th>
-      <th>&nbsp;</th>
     </tr>
     </thead>
     {% for i, e in enumerate(entries) %}
     <tr>
       <td>{{ e.id }}</td>
-      <td>{{ escape(e.pro_name) }}</td>
-      <td><a href="/admin/{{ e.id }}/tags/del" onclick="return window.confirm('确定要删除吗？')">delete</a></td>
-      <td>&nbsp;</td>
+      <td><a href="/admin/{{ e.id }}/insurance/edit" title="编辑">{{ escape(e.pro_name) }}</a></td>
+      <td>{{ e.min_age }} - {{ e.max_age }}</td>
+      <td>{{ e.company_name }}</td>
+      <td>{{ e.category_name }}</td>
+      <td><a href="javascript:void(0)" title="{{ e.description }}">{{ len(e.description) > 10 and e.description[0:10]+'...' or e.description }}</a></td>
+      <td><a href="javascript:void(0)" title="{{ e.notice }}">{{  len(e.notice) > 10 and e.notice[0:10]+'...' or e.notice  }}</a></td>
+      <td><a href="javascript:void(0)" title="{{ e.suitable }}">{{  len(e.suitable) > 10 and e.suitable[0:10]+'...' or e.suitable }}</a></td>
+      <td><a href="javascript:void(0)" title="{{ e.example }}">{{  len(e.example) > 10 and e.example[0:10]+'...' or e.example }}</a></td>
+      <td><a href="javascript:void(0)" title="{{ e.tags }}">{{ len(e.tags) > 10 and e.tags[0:10]+'...' or e.tags }}</a></td>
+      <td>{{ e.price }}</td>
+      <td>{{ e.sales_volume }}</td>
+      <td>{{ e.buy_count }}</td>
+      <td><a href="/admin/{{ e.id }}/insurance/del" onclick="return window.confirm('确定要删除吗？')" style="color: #ac2925;">delete</a></td>
     </tr>
     {% end %}
     </tbody>

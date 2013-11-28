@@ -88,24 +88,42 @@ class InsuranceHandler(BaseHandler):
             tags = self.db.query(sqls.QR_TAGS)
             self.render("admin/home.html", categories=category, companies=company, tags=tags)
         if "list" == action:
-            entries = self.db.query("SELECT * FROM insurance")
+            entries = self.db.query("SELECT i.*, c.company_name, ct.category_name "
+                                    " FROM insurance i ,company c ,category ct"
+                                    " where c.id = i.company_id "
+                                    " and ct.id = i.company_id and i.valid_flag=1"
+                                    )
             self.render("admin/list_insurance.html", entries=entries)
         raise tornado.web.HTTPError(400)
 
     def post(self, action):
         args = self.get_argument
         _id = args("id", None)
-        expire = args("expire", "2200-01-01 00:00:00")
-
+        img_name = self.get_arguments("imgNames", None)
+        tags = ",".join(self.get_arguments("tags", ''))
         if _id:
             #do update
             pass
-        self.db.execute(sqls.INST_INSURANCE,
-                        args("proName"), args("companyId"), args("categoryId"), args("notice", u''),
-                        args("minAge", 1), args("maxAge", 0), args("description", u''), args("example", u''),
-                        args("price", 0), args("salesVolume", 0), args("buyCount", 1), args("suitable", u''),
-                        ",".join(args("tags", u'')), expire)
+        last_id = self.db.execute(sqls.INST_INSURANCE,
+                                  args("proName"), args("companyId"), args("categoryId"), args("notice", u''), args("minAge", 1),
+                                  args("maxAge", 0), args("description", u''), args("example", u''), args("price", 0),
+                                  args("salesVolume", 0), args("buyCount", 1), args("suitable", u''), tags)
+        for img in img_name:
+            self.db.execute(sqls.INST_IMAGE, img, last_id, 1)
         self.redirect("list")
+
+
+@route("/admin/(\d+)/insurance/(edit|del)", name="edit_insurance")
+class EditInsurance(BaseHandler):
+
+    def get(self, clauseId, action):
+        insurance = self.db.query(sqls.QR_CLAUSE)
+        if "del" == action and insurance:
+            self.db.execute("UPDATE insurance SET valid_flag=0 WHERE id = %s ", clauseId)
+            self.redirect("/admin/insurance/list")
+        elif "edit" == action and insurance:
+            self.render("admin/edit_insurance.html", entry=insurance)
+        raise tornado.web.HTTPError(404)
 
 
 @route(r"/admin/clause/(.*)$", name="clause")

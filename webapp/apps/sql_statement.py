@@ -2,7 +2,7 @@
 INST_COMPANY = """INSERT INTO company(company_name, logo) VALUES(%s, %s)"""
 INST_CATEGORY = """INSERT INTO category(category_name, description, parent_id) VALUES(%s, %s, %s)"""
 INST_TAGS = """INSERT INTO tags (tag_name) VALUES(%s)"""
-INST_IMAGE = """INSERT INTO images(img_name, img_url, refered_id, type) VALUES(%s, %s, %s, %s);"""
+INST_IMAGE = """INSERT INTO images(img_name, refered_id, type) VALUES(%s, %s, %s);"""
 INST_INSURANCE = """INSERT INTO insurance(pro_name,company_id,category_id,notice,min_age,max_age,
 								description,example,price,sales_volume,buy_count,suitable,tags)
 						VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""

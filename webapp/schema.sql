@@ -16,8 +16,7 @@ CREATE TABLE category(
 
 CREATE TABLE images(
   id INT(11) NOT NULL AUTO_INCREMENT,
-  img_name VARCHAR(32) NOT NULL COMMENT '图片名称',
-  img_url VARCHAR(32) COMMENT '图片地址',
+  img_name VARCHAR(255) NOT NULL COMMENT '图片名称',
   refered_id INT(11) COMMENT '关联到的ID,如产品id,或者保险公司id',
   type SMALLINT(2) NOT NULL DEFAULT 1 COMMENT '图片分类,0是logo,1产品图片',
   PRIMARY KEY(id)
@@ -56,7 +55,6 @@ CREATE TABLE insurance (
   sales_volume INT(11) NOT NULL DEFAULT 0 COMMENT '销量',
   buy_count SMALLINT(3) NOT NULL DEFAULT 1 COMMENT '可购买份数',
   valid_flag SMALLINT(1) NOT NULL DEFAULT 1 COMMENT '是否有效,1有效',
-  expire DATETIME COMMENT "有效期间",
   create_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   update_time DATETIME,
   PRIMARY KEY (id)
