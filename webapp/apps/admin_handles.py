@@ -116,13 +116,16 @@ class InsuranceHandler(BaseHandler):
 @route("/admin/(\d+)/insurance/(edit|del)", name="edit_insurance")
 class EditInsurance(BaseHandler):
 
-    def get(self, clauseId, action):
-        insurance = self.db.query(sqls.QR_CLAUSE)
+    def get(self, insuranceId, action):
+        insurance = self.db.query("SELECT * FROM insurance WHERE id=%s" % insuranceId)
         if "del" == action and insurance:
-            self.db.execute("UPDATE insurance SET valid_flag=0 WHERE id = %s ", clauseId)
+            self.db.execute("UPDATE insurance SET valid_flag=0 WHERE id = %s ", insuranceId)
             self.redirect("/admin/insurance/list")
         elif "edit" == action and insurance:
-            self.render("admin/edit_insurance.html", entry=insurance)
+            category = self.db.query(sqls.QR_SIMPLE_CATEGORY)
+            company = self.db.query(sqls.QR_SIMPLE_COMPANY)
+            tags = self.db.query(sqls.QR_TAGS)
+            self.render("admin/edit_insurance.html", categories=category, companies=company, tags=tags)
         raise tornado.web.HTTPError(404)
 
 
