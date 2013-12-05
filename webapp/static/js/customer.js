@@ -30,9 +30,19 @@ function generate() {
 }
 
 $(document).ready(function () {
-//     $.validator.addMethod("isRegularAge", function(val){return date_to_num(val) > 0}, "Not Regular Age")
+     $.validator.addMethod("isRegularAge", function(val, element, param){
+         var num = date_to_num(val)
+         if (num > 0 ) {
+             $(element).val(date_to_num(val))
+             return true
+         }
+         return false
+     }, "Not Regular Age")
+     $.validator.addMethod("greaterThan", function(val, element, param){
+        return val > $(param).val()
+     }, "Max age should greater than min age")
      $('#insu-form').validate(
-         {   onfocusout:true,
+         {
 //             debug: true,
              rules: {
                  proName: {
@@ -40,14 +50,15 @@ $(document).ready(function () {
                      required: true
                  },
                  minAge: {
-                     minlength: 1,
+                     isRegularAge: true,
+                     min: 1,
+                     max: 36500,
                      required: true
-//                     isRegularAge: true
                  },
                  maxAge: {
-                     minlength: 1,
-                     required: true
-//                     isRegularAge:true
+                     isRegularAge:true,
+                     required: true,
+                     greaterThan: minAge
                  },
                  companyId: {
                      required: true
@@ -68,6 +79,7 @@ $(document).ready(function () {
                      required: true
                  },
                  price:{
+                     min:0,
                      number:true,
                      required: true
                  },
